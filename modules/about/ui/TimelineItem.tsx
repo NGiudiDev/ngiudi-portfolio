@@ -1,15 +1,10 @@
 "use client";
 
 import { BriefcaseIcon, AcademicCapIcon } from "@heroicons/react/24/outline";
+import { TimelineItemType } from "@/types";
 
 interface TimelineItemProps {
-  item: {
-    year: string;
-    title: string;
-    company: string;
-    description: string;
-    type: "work" | "education";
-  };
+  item: TimelineItemType;
 }
 
 export function TimelineItem({ item }: TimelineItemProps) {

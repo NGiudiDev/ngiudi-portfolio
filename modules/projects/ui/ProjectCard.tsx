@@ -2,17 +2,7 @@
 
 import Link from "next/link";
 import { ArrowTopRightOnSquareIcon, CodeBracketIcon } from "@heroicons/react/24/outline";
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  technologies: string[];
-  date: string;
-  github?: string;
-  demo?: string;
-  image?: string;
-}
+import { Project } from "@/types";
 
 interface ProjectCardProps {
   project: Project;

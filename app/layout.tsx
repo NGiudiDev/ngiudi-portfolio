@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
-import { Sidebar } from "./components/Sidebar";
-import { StatusBar } from "./components/StatusBar";
-import { TabBar } from "./components/TabBar";
+import { Sidebar, StatusBar, TabBar } from "@/shared/ui/components";
 
 import "./globals.css";
 

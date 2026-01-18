@@ -1,11 +1,9 @@
 "use client";
 
+import { Interest } from "@/types";
+
 interface InterestCardProps {
-  interest: {
-    icon: string;
-    title: string;
-    description: string;
-  };
+  interest: Interest;
 }
 
 export function InterestCard({ interest }: InterestCardProps) {

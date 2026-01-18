@@ -11,57 +11,10 @@ import {
   ChatBubbleLeftRightIcon,
   CheckCircleIcon,
 } from "@heroicons/react/24/solid";
+import { contactService } from "@/modules/contact/application/contact.service";
 
-const contactInfo = [
-  {
-    icon: EnvelopeIcon,
-    label: "Email",
-    value: "nicolas.giudi@example.com",
-    href: "mailto:nicolas.giudi@example.com",
-    color: "text-[#4ec9b0]",
-  },
-  {
-    icon: PhoneIcon,
-    label: "Teléfono",
-    value: "+54 11 1234-5678",
-    href: "tel:+541112345678",
-    color: "text-[#569cd6]",
-  },
-  {
-    icon: MapPinIcon,
-    label: "Ubicación",
-    value: "Buenos Aires, Argentina",
-    href: null,
-    color: "text-[#ce9178]",
-  },
-];
-
-const socialLinks = [
-  {
-    name: "GitHub",
-    url: "https://github.com/ngiudi",
-    icon: "🔗",
-    username: "@ngiudi",
-  },
-  {
-    name: "LinkedIn",
-    url: "https://linkedin.com/in/nicolas-giudi",
-    icon: "💼",
-    username: "Nicolas Giudi",
-  },
-  {
-    name: "Twitter",
-    url: "https://twitter.com/ngiudi",
-    icon: "🐦",
-    username: "@ngiudi",
-  },
-  {
-    name: "Portfolio",
-    url: "https://ngiudi.dev",
-    icon: "🌐",
-    username: "ngiudi.dev",
-  },
-];
+const contactInfo = contactService.getContactInfo();
+const socialLinks = contactService.getSocialLinks();
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -76,28 +29,7 @@ export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const validateForm = () => {
-    const newErrors: { [key: string]: string } = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = "El nombre es requerido";
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = "El email es requerido";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "El email no es válido";
-    }
-
-    if (!formData.subject.trim()) {
-      newErrors.subject = "El asunto es requerido";
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = "El mensaje es requerido";
-    } else if (formData.message.trim().length < 10) {
-      newErrors.message = "El mensaje debe tener al menos 10 caracteres";
-    }
-
+    const newErrors = contactService.validateForm(formData);
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -111,8 +43,8 @@ export default function ContactPage() {
 
     setIsSubmitting(true);
 
-    // Simular envío del formulario
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    // Usar el servicio para enviar el formulario
+    await contactService.submitForm(formData);
 
     console.log("Form submitted:", formData);
 

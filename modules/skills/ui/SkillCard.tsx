@@ -1,11 +1,7 @@
+import { Skill } from "@/types";
+
 interface SkillCardProps {
-  skill: {
-    name: string;
-    level: number; // 1-100
-    category: string;
-    icon?: string;
-    color: string;
-  };
+  skill: Skill;
 }
 
 export function SkillCard({ skill }: SkillCardProps) {
@@ -18,6 +14,7 @@ export function SkillCard({ skill }: SkillCardProps) {
       purple: "bg-[#c586c0]",
       red: "bg-[#f48771]",
     };
+
     return colors[color] || colors.blue;
   };
 

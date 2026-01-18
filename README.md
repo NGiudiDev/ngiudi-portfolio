@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Portfolio - Nicolas Giudice
 
-## Getting Started
+Portfolio personal desarrollado con **Next.js 16**, **TypeScript** y **Tailwind CSS**, implementando principios de **Clean Architecture** para un código mantenible, escalable y testeable.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Características
+
+- ⚡ **Next.js 15** con App Router
+- 📘 **TypeScript** para type safety
+- 🎨 **Tailwind CSS** para estilos
+- 🏗️ **Clean Architecture** - Código organizado en capas
+- 📦 **Modular** - Separación por features/módulos
+- 🧪 **Testeable** - Arquitectura que facilita testing
+- ♿ **Accesible** - Siguiendo mejores prácticas
+- 📱 **Responsive** - Adaptado a todos los dispositivos
+
+---
+
+## 🏗️ Arquitectura del Proyecto
+
+Este proyecto sigue los principios de **Clean Architecture**, organizando el código en capas bien definidas:
+
+```
+├── app/                   # Next.js App Router (solo páginas/rutas)
+├── modules/               # Módulos de dominio (Clean Architecture)
+│   ├── about/             # Módulo "Sobre mí"
+│   ├── contact/           # Módulo de contacto
+│   ├── projects/          # Módulo de proyectos
+│   ├── resume/            # Módulo de CV
+│   └── skills/            # Módulo de habilidades
+├── shared/                # Código compartido
+│   └── ui/components/     # Componentes compartidos
+└── types/                 # Tipos TypeScript compartidos
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Inicio Rápido
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisitos
 
-## Learn More
+- Node.js 18+ 
+- npm, yarn, pnpm o bun
 
-To learn more about Next.js, take a look at the following resources:
+### Instalación
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Clonar el repositorio
+git clone https://github.com/ngiudi/ngiudi-portfolio.git
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Entrar al directorio
+cd portfolio
 
-## Deploy on Vercel
+# Instalar dependencias
+npm install
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Ejecutar en desarrollo
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
+
+---
+
+## 📦 Scripts Disponibles
+
+```bash
+npm run dev      # Inicia el servidor de desarrollo
+npm run build    # Construye la aplicación para producción
+npm start        # Inicia el servidor de producción
+npm run lint     # Ejecuta el linter
+```
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+### Core
+- **Framework**: Next.js 15
+- **Lenguaje**: TypeScript
+- **Estilos**: Tailwind CSS
+
+### UI/UX
+- **Iconos**: Heroicons
+- **Fuentes**: Geist Sans & Geist Mono
+
+### Arquitectura
+- **Patrón**: Clean Architecture
+- **Organización**: Feature-based modules
+
+---
+
+## 🎨 Personalización
+
+### Colores del Tema
+
+Los colores están inspirados en VS Code Dark Theme y se pueden personalizar en `app/globals.css`.
+
+### Componentes
+
+Todos los componentes compartidos están en `shared/ui/components/` y pueden ser reutilizados en cualquier módulo.
+
+---
+
+## 📚 Recursos Adicionales
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
