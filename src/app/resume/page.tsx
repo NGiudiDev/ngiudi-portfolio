@@ -30,7 +30,7 @@ export default function ResumePage() {
       <div className="mb-8 flex items-start justify-between">
         <div>
           <div className="mb-4">
-            <span className="text-[#6a9955]">// resume.tsx</span>
+            <span className="text-[#6a9955]">&#47;&#47; resume.tsx</span>
           </div>
           <h1 className="text-4xl font-bold text-[#4ec9b0] mb-2">
             Currículum Vitae

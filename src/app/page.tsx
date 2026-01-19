@@ -15,7 +15,7 @@ export default function Home() {
         </h1>
         
         <p className="text-[#d4d4d4] text-lg">
-          <span className="text-[#6a9955]">// Full Stack Developer</span>
+          <span className="text-[#6a9955]">&#47;&#47; Full Stack Developer</span>
         </p>
 
         <div className="mt-8 space-y-2 text-[#d4d4d4]">

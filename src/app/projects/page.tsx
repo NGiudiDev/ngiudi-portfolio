@@ -9,11 +9,13 @@ export default function ProjectsPage() {
       {/* Header */}
       <div className="mb-8">
         <div className="mb-4">
-          <span className="text-[#6a9955]">// projects.tsx</span>
+          <span className="text-[#6a9955]">&#47;&#47; projects.tsx</span>
         </div>
+
         <h1 className="text-4xl font-bold text-[#4ec9b0] mb-2">
           Mis Proyectos
         </h1>
+        
         <p className="text-[#d4d4d4] text-lg">
           <span className="text-[#569cd6]">const</span>{" "}
           <span className="text-[#9cdcfe]">projectCount</span>{" "}
@@ -33,7 +35,7 @@ export default function ProjectsPage() {
       {/* Footer */}
       <div className="mt-12 pt-6 border-t border-[#2d2d2d]">
         <p className="text-[#6a9955] text-sm">
-          // Más proyectos próximamente...
+          &#47;&#47; Más proyectos próximamente...
         </p>
       </div>
     </div>

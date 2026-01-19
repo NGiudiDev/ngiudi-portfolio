@@ -11,7 +11,7 @@ export default function AboutPage() {
       {/* Header */}
       <div className="mb-12">
         <div className="mb-4">
-          <span className="text-[#6a9955]">// about.tsx</span>
+          <span className="text-[#6a9955]">&#47;&#47; about.tsx</span>
         </div>
         <h1 className="text-4xl font-bold text-[#4ec9b0] mb-4">
           Sobre Mí
@@ -64,7 +64,7 @@ export default function AboutPage() {
       {/* Experience Timeline */}
       <section className="mb-16">
         <h2 className="text-2xl font-bold text-[#569cd6] mb-6 flex items-center gap-2">
-          <span className="text-[#6a9955]">//</span> Experiencia Profesional
+          <span className="text-[#6a9955]">&#47;&#47;</span> Experiencia Profesional
         </h2>
         <div className="space-y-4">
           {experiences.map((exp, index) => (
@@ -76,7 +76,7 @@ export default function AboutPage() {
       {/* Education Timeline */}
       <section className="mb-16">
         <h2 className="text-2xl font-bold text-[#569cd6] mb-6 flex items-center gap-2">
-          <span className="text-[#6a9955]">//</span> Educación & Certificaciones
+          <span className="text-[#6a9955]">&#47;&#47;</span> Educación & Certificaciones
         </h2>
         <div className="space-y-4">
           {education.map((edu, index) => (
@@ -88,7 +88,7 @@ export default function AboutPage() {
       {/* Interests */}
       <section className="mb-8">
         <h2 className="text-2xl font-bold text-[#569cd6] mb-6 flex items-center gap-2">
-          <span className="text-[#6a9955]">//</span> Intereses & Pasiones
+          <span className="text-[#6a9955]">&#47;&#47;</span> Intereses & Pasiones
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {interests.map((interest, index) => (

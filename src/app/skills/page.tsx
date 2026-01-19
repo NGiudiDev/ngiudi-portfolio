@@ -10,7 +10,7 @@ export default function SkillsPage() {
       {/* Header */}
       <div className="mb-12">
         <div className="mb-4">
-          <span className="text-[#6a9955]">// skills.tsx</span>
+          <span className="text-[#6a9955]">&#47;&#47; skills.tsx</span>
         </div>
         <h1 className="text-4xl font-bold text-[#4ec9b0] mb-4">
           Habilidades Técnicas
@@ -45,7 +45,7 @@ export default function SkillsPage() {
           <section key={category.name} className="mb-12">
             <div className="mb-6">
               <h2 className="text-2xl font-semibold text-[#dcdcaa] mb-2">
-                <span className="text-[#6a9955]">// </span>
+                <span className="text-[#6a9955]">&#47;&#47; </span>
                 {category.name}
               </h2>
               <div className="h-0.5 w-20 bg-[#007acc]" />
@@ -65,14 +65,14 @@ export default function SkillsPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-[#252526] border border-[#2d2d2d] rounded-lg p-6">
             <div className="text-[#569cd6] text-sm mb-2">
-              <span className="text-[#6a9955]">// </span>Años de experiencia
+              <span className="text-[#6a9955]">&#47;&#47; </span>Años de experiencia
             </div>
             <div className="text-4xl font-bold text-[#4ec9b0]">5+</div>
           </div>
           
           <div className="bg-[#252526] border border-[#2d2d2d] rounded-lg p-6">
             <div className="text-[#569cd6] text-sm mb-2">
-              <span className="text-[#6a9955]">// </span>Tecnologías dominadas
+              <span className="text-[#6a9955]">&#47;&#47; </span>Tecnologías dominadas
             </div>
             <div className="text-4xl font-bold text-[#4ec9b0]">
               {skills.filter((s) => s.level >= 80).length}
@@ -81,7 +81,7 @@ export default function SkillsPage() {
           
           <div className="bg-[#252526] border border-[#2d2d2d] rounded-lg p-6">
             <div className="text-[#569cd6] text-sm mb-2">
-              <span className="text-[#6a9955]">// </span>Aprendizaje continuo
+              <span className="text-[#6a9955]">&#47;&#47; </span>Aprendizaje continuo
             </div>
             <div className="text-4xl font-bold text-[#4ec9b0]">100%</div>
           </div>

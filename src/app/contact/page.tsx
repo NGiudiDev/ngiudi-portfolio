@@ -1,17 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import {
-  EnvelopeIcon,
-  MapPinIcon,
-  PhoneIcon,
-} from "@heroicons/react/24/outline";
+
+import { contactService } from "@/modules/contact/application/contact.service";
+
 import {
   DocumentTextIcon,
   ChatBubbleLeftRightIcon,
   CheckCircleIcon,
 } from "@heroicons/react/24/solid";
-import { contactService } from "@/modules/contact/application/contact.service";
 
 const contactInfo = contactService.getContactInfo();
 const socialLinks = contactService.getSocialLinks();
@@ -75,7 +72,7 @@ export default function ContactPage() {
       {/* Header */}
       <div className="mb-12">
         <div className="mb-4">
-          <span className="text-[#6a9955]">// contact.tsx</span>
+          <span className="text-[#6a9955]">&#47;&#47; contact.tsx</span>
         </div>
         <h1 className="text-4xl font-bold text-[#4ec9b0] mb-4">Contacto</h1>
         <p className="text-[#d4d4d4] text-lg">
@@ -99,7 +96,7 @@ export default function ContactPage() {
                 Envíame un mensaje
               </h2>
               <p className="text-[#858585] text-sm mt-2">
-                <span className="text-[#6a9955]">// </span>
+                <span className="text-[#6a9955]">&#47;&#47; </span>
                 Completa el formulario y te responderé lo antes posible
               </p>
             </div>
@@ -138,7 +135,7 @@ export default function ContactPage() {
                   />
                   {errors.name && (
                     <p className="text-[#f48771] text-xs mt-1">
-                      <span className="text-[#6a9955]">// </span>
+                      <span className="text-[#6a9955]">&#47;&#47; </span>
                       {errors.name}
                     </p>
                   )}
@@ -166,7 +163,7 @@ export default function ContactPage() {
                   />
                   {errors.email && (
                     <p className="text-[#f48771] text-xs mt-1">
-                      <span className="text-[#6a9955]">// </span>
+                      <span className="text-[#6a9955]">&#47;&#47; </span>
                       {errors.email}
                     </p>
                   )}
@@ -194,7 +191,7 @@ export default function ContactPage() {
                   />
                   {errors.subject && (
                     <p className="text-[#f48771] text-xs mt-1">
-                      <span className="text-[#6a9955]">// </span>
+                      <span className="text-[#6a9955]">&#47;&#47; </span>
                       {errors.subject}
                     </p>
                   )}
@@ -222,7 +219,7 @@ export default function ContactPage() {
                   />
                   {errors.message && (
                     <p className="text-[#f48771] text-xs mt-1">
-                      <span className="text-[#6a9955]">// </span>
+                      <span className="text-[#6a9955]">&#47;&#47; </span>
                       {errors.message}
                     </p>
                   )}

@@ -44,7 +44,7 @@ export function SkillCard({ skill }: SkillCardProps) {
       </div>
       
       <div className="text-[#6a9955] text-xs">
-        <span className="text-[#858585]">// </span>
+        <span className="text-[#858585]">&#47;&#47; </span>
         {skill.category}
       </div>
     </div>
