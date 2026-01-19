@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+
 import Link from "next/link";
+
 import { 
   HomeIcon, 
   UserIcon, 
@@ -34,19 +36,22 @@ export function Sidebar() {
       <nav className="flex flex-col gap-4">
         {navigationItems.map((item) => {
           const Icon = item.icon;
+
           return (
             <Link
-              key={item.name}
-              href={item.href}
-              onClick={() => setActiveItem(item.name)}
               className={`p-2 rounded transition-colors relative group ${
                 activeItem === item.name
                   ? "text-white"
                   : "text-[#858585] hover:text-white"
-              }`}
+              }`}  
+              href={item.href}
+              key={item.name}
+              onClick={() => setActiveItem(item.name)}
               title={item.name}
             >
               <Icon className="w-6 h-6" />
+
+              {/* White bar indicator */}
               {activeItem === item.name && (
                 <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-white" />
               )}

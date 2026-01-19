@@ -1,4 +1,5 @@
 import { TimelineItem, InterestCard } from "@/modules/about/ui";
+
 import { aboutService } from "@/modules/about/application/about.service";
 
 const experiences = aboutService.getExperiences();
@@ -9,10 +10,7 @@ export default function AboutPage() {
   return (
     <div className="p-8 font-mono max-w-6xl mx-auto">
       {/* Header */}
-      <div className="mb-12">
-        <div className="mb-4">
-          <span className="text-[#6a9955]">&#47;&#47; about.tsx</span>
-        </div>
+      <div className="mb-12 mt-4">
         <h1 className="text-4xl font-bold text-[#4ec9b0] mb-4">
           Sobre Mí
         </h1>
@@ -63,9 +61,14 @@ export default function AboutPage() {
 
       {/* Experience Timeline */}
       <section className="mb-16">
-        <h2 className="text-2xl font-bold text-[#569cd6] mb-6 flex items-center gap-2">
-          <span className="text-[#6a9955]">&#47;&#47;</span> Experiencia Profesional
-        </h2>
+        <div className="mb-6">
+          <h2 className="text-2xl font-semibold text-[#569cd6] mb-2">
+            Experiencia Profesional
+          </h2>
+
+          <div className="h-0.5 w-20 bg-[#b5cea8]" />
+        </div>
+
         <div className="space-y-4">
           {experiences.map((exp, index) => (
             <TimelineItem key={index} item={exp} />
@@ -75,9 +78,14 @@ export default function AboutPage() {
 
       {/* Education Timeline */}
       <section className="mb-16">
-        <h2 className="text-2xl font-bold text-[#569cd6] mb-6 flex items-center gap-2">
-          <span className="text-[#6a9955]">&#47;&#47;</span> Educación & Certificaciones
-        </h2>
+        <div className="mb-6">
+          <h2 className="text-2xl font-semibold text-[#569cd6] mb-2">
+            Educación & Certificaciones
+          </h2>
+
+          <div className="h-0.5 w-20 bg-[#b5cea8]" />
+        </div>
+        
         <div className="space-y-4">
           {education.map((edu, index) => (
             <TimelineItem key={index} item={edu} />
@@ -87,9 +95,14 @@ export default function AboutPage() {
 
       {/* Interests */}
       <section className="mb-8">
-        <h2 className="text-2xl font-bold text-[#569cd6] mb-6 flex items-center gap-2">
-          <span className="text-[#6a9955]">&#47;&#47;</span> Intereses & Pasiones
-        </h2>
+        <div className="mb-6">
+          <h2 className="text-2xl font-semibold text-[#569cd6] mb-2">
+            Intereses & Pasiones
+          </h2>
+
+          <div className="h-0.5 w-20 bg-[#b5cea8]" />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {interests.map((interest, index) => (
             <InterestCard key={index} interest={interest} />

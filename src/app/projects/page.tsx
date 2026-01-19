@@ -5,13 +5,9 @@ const projects = projectsService.getAllProjects();
 
 export default function ProjectsPage() {
   return (
-    <div className="p-8 font-mono max-w-7xl mx-auto">
+    <div className="p-8 font-mono max-w-6xl mx-auto">
       {/* Header */}
-      <div className="mb-8">
-        <div className="mb-4">
-          <span className="text-[#6a9955]">&#47;&#47; projects.tsx</span>
-        </div>
-
+      <div className="mb-12 mt-4">
         <h1 className="text-4xl font-bold text-[#4ec9b0] mb-2">
           Mis Proyectos
         </h1>

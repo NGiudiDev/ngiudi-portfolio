@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="p-8 font-mono">
+    <div className="p-8 font-mono max-w-6xl mx-auto">
       <div className="mb-8">
         <span className="text-[#569cd6]">const</span>{" "}
         <span className="text-[#9cdcfe]">greeting</span>{" "}

@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+
+import { resumeService } from "@/modules/resume/application/resume.service";
+
 import { 
   EnvelopeIcon, 
   PhoneIcon, 
@@ -8,14 +11,13 @@ import {
   GlobeAltIcon,
   ArrowDownTrayIcon 
 } from "@heroicons/react/24/outline";
-import { resumeService } from "@/modules/resume/application/resume.service";
 
+const certifications = resumeService.getCertifications();
 const personalInfo = resumeService.getPersonalInfo();
 const experiences = resumeService.getExperiences();
-const education = resumeService.getEducation();
-const certifications = resumeService.getCertifications();
-const skills = resumeService.getSkills();
 const languages = resumeService.getLanguages();
+const education = resumeService.getEducation();
+const skills = resumeService.getSkills();
 
 export default function ResumePage() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -25,16 +27,14 @@ export default function ResumePage() {
   };
 
   return (
-    <div className="p-8 font-mono max-w-5xl mx-auto">
+    <div className="p-8 font-mono max-w-6xl mx-auto">
       {/* Header with Download Button */}
-      <div className="mb-8 flex items-start justify-between">
+      <div className="mb-12 mt-4 flex items-start justify-between">
         <div>
-          <div className="mb-4">
-            <span className="text-[#6a9955]">&#47;&#47; resume.tsx</span>
-          </div>
           <h1 className="text-4xl font-bold text-[#4ec9b0] mb-2">
             Currículum Vitae
           </h1>
+          
           <p className="text-[#858585]">
             <span className="text-[#569cd6]">const</span>{" "}
             <span className="text-[#9cdcfe]">lastUpdated</span>{" "}
@@ -45,8 +45,8 @@ export default function ResumePage() {
         </div>
         
         <button
-          onClick={handleDownload}
           className="flex items-center gap-2 px-4 py-2 bg-[#007acc] text-white rounded hover:bg-[#005a9e] transition-colors"
+          onClick={handleDownload}
         >
           <ArrowDownTrayIcon className="w-5 h-5" />
           Descargar PDF
@@ -58,6 +58,7 @@ export default function ResumePage() {
         <h2 className="text-3xl font-bold text-[#d4d4d4] mb-2">
           {personalInfo.name}
         </h2>
+
         <p className="text-xl text-[#4ec9b0] mb-4">{personalInfo.title}</p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4 text-[#9cdcfe] text-sm">
@@ -67,14 +68,17 @@ export default function ResumePage() {
               {personalInfo.email}
             </a>
           </div>
+          
           <div className="flex items-center gap-2">
             <PhoneIcon className="w-4 h-4 text-[#858585]" />
             <span>{personalInfo.phone}</span>
           </div>
+          
           <div className="flex items-center gap-2">
             <MapPinIcon className="w-4 h-4 text-[#858585]" />
             <span>{personalInfo.location}</span>
           </div>
+          
           <div className="flex items-center gap-2">
             <GlobeAltIcon className="w-4 h-4 text-[#858585]" />
             <a href={`https://${personalInfo.website}`} className="hover:text-[#4ec9b0] transition-colors">
@@ -91,15 +95,19 @@ export default function ResumePage() {
 
       {/* Experience */}
       <section className="mb-8">
-        <h2 className="text-2xl font-bold text-[#dcdcaa] mb-6 flex items-center gap-2">
-          <span className="text-[#6a9955]">{"//>"}</span> Experiencia Profesional
-        </h2>
+        <div className="mb-6">
+          <h2 className="text-2xl font-semibold text-[#569cd6] mb-2">
+            Experiencia Profesional
+          </h2>
+
+          <div className="h-0.5 w-20 bg-[#b5cea8]" />
+        </div>
         
         <div className="space-y-6">
           {experiences.map((exp, index) => (
             <div
-              key={index}
               className="bg-[#252526] border border-[#2d2d2d] rounded-lg p-6 hover:border-[#007acc] transition-all cursor-pointer"
+              key={index}
               onClick={() => setActiveSection(activeSection === `exp-${index}` ? null : `exp-${index}`)}
             >
               <div className="flex justify-between items-start mb-3">
@@ -107,6 +115,7 @@ export default function ResumePage() {
                   <h3 className="text-lg font-semibold text-[#4ec9b0]">{exp.position}</h3>
                   <p className="text-[#9cdcfe]">{exp.company}</p>
                 </div>
+                
                 <div className="text-right">
                   <p className="text-[#858585] text-sm">{exp.period}</p>
                   <p className="text-[#858585] text-xs">{exp.location}</p>
@@ -125,8 +134,8 @@ export default function ResumePage() {
               <div className="flex flex-wrap gap-2">
                 {exp.technologies.map((tech, idx) => (
                   <span
-                    key={idx}
                     className="px-2 py-1 bg-[#1e1e1e] text-[#9cdcfe] text-xs rounded border border-[#007acc]"
+                    key={idx}
                   >
                     {tech}
                   </span>
@@ -141,14 +150,18 @@ export default function ResumePage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         {/* Education */}
         <section>
-          <h2 className="text-2xl font-bold text-[#dcdcaa] mb-6 flex items-center gap-2">
-            <span className="text-[#6a9955]">{"//>"}</span> Educación
-          </h2>
+          <div className="mb-6">
+            <h2 className="text-2xl font-semibold text-[#569cd6] mb-2">
+              Educación
+            </h2>
+
+            <div className="h-0.5 w-20 bg-[#b5cea8]" />
+          </div>
           
           {education.map((edu, index) => (
             <div
-              key={index}
               className="bg-[#252526] border border-[#2d2d2d] rounded-lg p-5"
+              key={index}
             >
               <p className="text-[#858585] text-sm mb-2">{edu.period}</p>
               <h3 className="text-lg font-semibold text-[#4ec9b0] mb-1">{edu.degree}</h3>
@@ -163,15 +176,19 @@ export default function ResumePage() {
 
         {/* Certifications */}
         <section>
-          <h2 className="text-2xl font-bold text-[#dcdcaa] mb-6 flex items-center gap-2">
-            <span className="text-[#6a9955]">{"//>"}</span> Certificaciones
-          </h2>
-          
+          <div className="mb-6">
+            <h2 className="text-2xl font-semibold text-[#569cd6] mb-2">
+              Certificaciones
+            </h2>
+
+            <div className="h-0.5 w-20 bg-[#b5cea8]" />
+          </div>
+
           <div className="space-y-3">
             {certifications.map((cert, index) => (
               <div
-                key={index}
                 className="bg-[#252526] border border-[#2d2d2d] rounded-lg p-4"
+                key={index}
               >
                 <div className="flex justify-between items-start mb-1">
                   <h3 className="text-sm font-semibold text-[#4ec9b0]">{cert.name}</h3>
@@ -186,10 +203,14 @@ export default function ResumePage() {
 
       {/* Skills */}
       <section className="mb-8">
-        <h2 className="text-2xl font-bold text-[#dcdcaa] mb-6 flex items-center gap-2">
-          <span className="text-[#6a9955]">{"//>"}</span> Habilidades Técnicas
-        </h2>
-        
+        <div className="mb-6">
+          <h2 className="text-2xl font-semibold text-[#569cd6] mb-2">
+            Habilidades Técnicas
+          </h2>
+
+          <div className="h-0.5 w-20 bg-[#b5cea8]" />
+        </div>
+
         <div className="bg-[#252526] border border-[#2d2d2d] rounded-lg p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {Object.entries(skills).map(([category, skillList]) => (
@@ -197,11 +218,12 @@ export default function ResumePage() {
                 <h3 className="text-sm font-semibold text-[#569cd6] mb-3 uppercase tracking-wider">
                   {category}
                 </h3>
+
                 <div className="flex flex-wrap gap-2">
                   {skillList.map((skill, idx) => (
                     <span
-                      key={idx}
                       className="px-3 py-1 bg-[#1e1e1e] text-[#d4d4d4] text-sm rounded hover:bg-[#2d2d2d] transition-colors"
+                      key={idx}
                     >
                       {skill}
                     </span>
@@ -215,14 +237,18 @@ export default function ResumePage() {
 
       {/* Languages */}
       <section className="mb-8">
-        <h2 className="text-2xl font-bold text-[#dcdcaa] mb-6 flex items-center gap-2">
-          <span className="text-[#6a9955]">{"//>"}</span> Idiomas
-        </h2>
+        <div className="mb-6">
+          <h2 className="text-2xl font-semibold text-[#569cd6] mb-2">
+            Idiomas
+          </h2>
+
+          <div className="h-0.5 w-20 bg-[#b5cea8]" />
+        </div>
         
         <div className="bg-[#252526] border border-[#2d2d2d] rounded-lg p-6">
           <div className="flex gap-8">
             {languages.map((lang, index) => (
-              <div key={index} className="flex items-center gap-3">
+              <div className="flex items-center gap-3" key={index}>
                 <span className="text-[#d4d4d4] font-semibold">{lang.name}:</span>
                 <span className="text-[#4ec9b0]">{lang.level}</span>
               </div>
@@ -230,15 +256,6 @@ export default function ResumePage() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <div className="mt-12 pt-6 border-t border-[#2d2d2d] text-center">
-        <p className="text-[#6a9955] text-sm">
-          <span className="text-[#569cd6]">export default</span>{" "}
-          <span className="text-[#9cdcfe]">ResumePage</span>
-          <span className="text-[#d4d4d4]">;</span>
-        </p>
-      </div>
     </div>
   );
 }
