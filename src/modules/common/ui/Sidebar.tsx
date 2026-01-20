@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 import Link from "next/link";
 
@@ -14,16 +14,16 @@ import {
 } from "@heroicons/react/24/outline";
 
 const navigationItems = [
-  { href: "/", icon: HomeIcon, name: "Home" },
-  { href: "/about", icon: UserIcon, name: "About" },
-  { href: "/projects", icon: BriefcaseIcon, name: "Projects" },
-  { href: "/skills", icon: CodeBracketIcon, name: "Skills" },
-  { href: "/resume", icon: DocumentTextIcon, name: "Resume" },
-  { href: "/contact", icon: EnvelopeIcon, name: "Contact" },
+  { href: "/", icon: HomeIcon, name: "Inicio" },
+  { href: "/about", icon: UserIcon, name: "Sobre mí" },
+  { href: "/projects", icon: BriefcaseIcon, name: "Mis Proyectos" },
+  { href: "/skills", icon: CodeBracketIcon, name: "Habilidades" },
+  { href: "/resume", icon: DocumentTextIcon, name: "Currículum Vitae" },
+  { href: "/contact", icon: EnvelopeIcon, name: "Contacto" },
 ];
 
 export function Sidebar() {
-  const [activeItem, setActiveItem] = useState("Home");
+  const pathname = usePathname();
 
   return (
     <aside className="w-12 bg-[#333333] flex flex-col items-center py-4 border-r border-[#2d2d2d]">
@@ -36,23 +36,23 @@ export function Sidebar() {
       <nav className="flex flex-col gap-4">
         {navigationItems.map((item) => {
           const Icon = item.icon;
+          const isActive = pathname === item.href;
 
           return (
             <Link
               className={`p-2 rounded transition-colors relative group ${
-                activeItem === item.name
+                isActive
                   ? "text-white"
                   : "text-[#858585] hover:text-white"
               }`}  
               href={item.href}
               key={item.name}
-              onClick={() => setActiveItem(item.name)}
               title={item.name}
             >
               <Icon className="w-6 h-6" />
 
               {/* White bar indicator */}
-              {activeItem === item.name && (
+              {isActive && (
                 <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-white" />
               )}
               
