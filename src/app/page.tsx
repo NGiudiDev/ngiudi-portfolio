@@ -31,7 +31,7 @@ export default function Home() {
             <span className="text-[#9cdcfe]">nombre</span>: 
             <span className="text-[#ce9178]"> &quot;Nicolás Giudice&quot;</span>,
           </p>
-
+ 
           <p className="pl-4">
             <span className="text-[#9cdcfe]">pasión</span>: 
             <span className="text-[#ce9178]"> &quot;Construir experiencias increíbles&quot;</span>,
