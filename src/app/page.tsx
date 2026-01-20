@@ -34,8 +34,29 @@ export default function Home() {
 
           <p className="pl-4">
             <span className="text-[#9cdcfe]">pasión</span>: 
-            <span className="text-[#ce9178]"> &quot;Construir experiencias increíbles&quot;</span>
+            <span className="text-[#ce9178]"> &quot;Construir experiencias increíbles&quot;</span>,
           </p>
+
+          <p className="pl-4">
+            <span className="text-[#9cdcfe]">trabajo_actual</span>: &#123;
+          </p>
+
+          <p className="pl-8">
+            <span className="text-[#9cdcfe]">desde</span>: 
+            <span className="text-[#ce9178]"> &quot;Agosto 2021&quot;</span>,
+          </p>
+
+          <p className="pl-8">
+            <span className="text-[#9cdcfe]">empresa</span>: 
+            <span className="text-[#ce9178]"> &quot;Shipnow&quot;</span>,
+          </p>
+
+          <p className="pl-8">
+            <span className="text-[#9cdcfe]">puesto</span>: 
+            <span className="text-[#ce9178]"> &quot;Líder técnico de frontend&quot;</span>,
+          </p>
+
+          <p className="pl-4">&#125;,</p>
 
           <p>&#125;</p>
         </div>
