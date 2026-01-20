@@ -76,7 +76,7 @@ export default function ContactPage() {
         subtitle={
           <>
             <span className="text-[#569cd6]">const</span>{" "}
-            <span className="text-[#9cdcfe]">message</span>{" "}
+            <span className="text-[#9cdcfe]">mensaje</span>{" "}
             <span className="text-[#d4d4d4]">=</span>{" "}
             <span className="text-[#ce9178]">
               &quot;¡Hablemos sobre tu próximo proyecto!&quot;
@@ -121,7 +121,7 @@ export default function ContactPage() {
                     className="block text-[#9cdcfe] text-sm mb-2"
                     htmlFor="name"
                   >
-                    <span className="text-[#569cd6]">const</span> name{" "}
+                    <span className="text-[#569cd6]">const</span> nombre{" "}
                     <span className="text-[#d4d4d4]">=</span>
                   </label>
                   
@@ -139,7 +139,6 @@ export default function ContactPage() {
                   
                   {errors.name && (
                     <p className="text-[#f48771] text-xs mt-1">
-                      <span className="text-[#6a9955]">&#47;&#47; </span>
                       {errors.name}
                     </p>
                   )}
@@ -169,7 +168,6 @@ export default function ContactPage() {
 
                   {errors.email && (
                     <p className="text-[#f48771] text-xs mt-1">
-                      <span className="text-[#6a9955]">&#47;&#47; </span>
                       {errors.email}
                     </p>
                   )}
@@ -181,7 +179,7 @@ export default function ContactPage() {
                     className="block text-[#9cdcfe] text-sm mb-2"
                     htmlFor="subject"
                   >
-                    <span className="text-[#569cd6]">const</span> subject{" "}
+                    <span className="text-[#569cd6]">const</span> asunto{" "}
                     <span className="text-[#d4d4d4]">=</span>
                   </label>
 
@@ -200,7 +198,6 @@ export default function ContactPage() {
 
                   {errors.subject && (
                     <p className="text-[#f48771] text-xs mt-1">
-                      <span className="text-[#6a9955]">&#47;&#47; </span>
                       {errors.subject}
                     </p>
                   )}
@@ -212,7 +209,7 @@ export default function ContactPage() {
                     className="block text-[#9cdcfe] text-sm mb-2"
                     htmlFor="message"
                   >
-                    <span className="text-[#569cd6]">const</span> message{" "}
+                    <span className="text-[#569cd6]">const</span> mensaje{" "}
                     <span className="text-[#d4d4d4]">=</span>
                   </label>
 
@@ -230,7 +227,6 @@ export default function ContactPage() {
 
                   {errors.message && (
                     <p className="text-[#f48771] text-xs mt-1">
-                      <span className="text-[#6a9955]">&#47;&#47; </span>
                       {errors.message}
                     </p>
                   )}
@@ -268,7 +264,7 @@ export default function ContactPage() {
           <div className="bg-[#252526] border border-[#2d2d2d] rounded-lg p-6">
             <h3 className="text-lg font-semibold text-[#dcdcaa] mb-4 flex items-center gap-2">
               <DocumentTextIcon className="w-5 h-5" />
-              Información de Contacto
+              Información de contacto
             </h3>
 
             <div className="space-y-4">
@@ -278,6 +274,7 @@ export default function ContactPage() {
                 return (
                   <div key={index} className="flex items-start gap-3">
                     <Icon className={`w-5 h-5 mt-0.5 ${info.color}`} />
+
                     <div>
                       <p className="text-[#858585] text-xs uppercase tracking-wider">
                         {info.label}
