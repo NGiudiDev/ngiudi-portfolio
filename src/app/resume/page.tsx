@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
+import { PageTitle } from "@/modules/common/ui/PageTitle";
 import { resumeService } from "@/modules/resume/application/resume.service";
 
 import { 
@@ -28,30 +28,27 @@ export default function ResumePage() {
 
   return (
     <div className="p-8 font-mono max-w-6xl mx-auto">
-      {/* Header with Download Button */}
-      <div className="mb-12 mt-4 flex items-start justify-between">
-        <div>
-          <h1 className="text-4xl font-bold text-[#4ec9b0] mb-2">
-            Currículum Vitae
-          </h1>
-          
-          <p className="text-[#858585]">
+      <PageTitle 
+        title="Currículum Vitae" 
+        subtitle={
+          <span className="text-[#858585]">
             <span className="text-[#569cd6]">const</span>{" "}
             <span className="text-[#9cdcfe]">lastUpdated</span>{" "}
             <span className="text-[#d4d4d4]">=</span>{" "}
             <span className="text-[#ce9178]">&quot;Enero 2026&quot;</span>
             <span className="text-[#d4d4d4]">;</span>
-          </p>
-        </div>
-        
-        <button
-          className="flex items-center gap-2 px-4 py-2 bg-[#007acc] text-white rounded hover:bg-[#005a9e] transition-colors"
-          onClick={handleDownload}
-        >
-          <ArrowDownTrayIcon className="w-5 h-5" />
-          Descargar PDF
-        </button>
-      </div>
+          </span>
+        }
+        action={
+          <button
+            className="flex items-center gap-2 px-4 py-2 bg-[#007acc] text-white rounded hover:bg-[#005a9e] transition-colors"
+            onClick={handleDownload}
+          >
+            <ArrowDownTrayIcon className="w-5 h-5" />
+            Descargar PDF
+          </button>
+        }
+      />
 
       {/* Personal Info Card */}
       <section className="mb-8 bg-[#252526] border border-[#2d2d2d] rounded-lg p-6">

@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import { PageTitle } from "@/modules/common/ui/PageTitle";
+
 import { contactService } from "@/modules/contact/application/contact.service";
 
 import {
@@ -69,20 +71,20 @@ export default function ContactPage() {
 
   return (
     <div className="p-8 font-mono max-w-6xl mx-auto">
-      {/* Header */}
-      <div className="mb-12  mt-4">
-        <h1 className="text-4xl font-bold text-[#4ec9b0] mb-4">Contacto</h1>
-        
-        <p className="text-[#d4d4d4] text-lg">
-          <span className="text-[#569cd6]">const</span>{" "}
-          <span className="text-[#9cdcfe]">message</span>{" "}
-          <span className="text-[#d4d4d4]">=</span>{" "}
-          <span className="text-[#ce9178]">
-            &quot;¡Hablemos sobre tu próximo proyecto!&quot;
-          </span>
-          <span className="text-[#d4d4d4]">;</span>
-        </p>
-      </div>
+      <PageTitle 
+        title="Contacto" 
+        subtitle={
+          <>
+            <span className="text-[#569cd6]">const</span>{" "}
+            <span className="text-[#9cdcfe]">message</span>{" "}
+            <span className="text-[#d4d4d4]">=</span>{" "}
+            <span className="text-[#ce9178]">
+              &quot;¡Hablemos sobre tu próximo proyecto!&quot;
+            </span>
+            <span className="text-[#d4d4d4]">;</span>
+          </>
+        }
+      />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Contact Form */}

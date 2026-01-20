@@ -1,4 +1,5 @@
 import { TimelineItem, InterestCard } from "@/modules/about/ui";
+import { PageTitle } from "@/modules/common/ui/PageTitle";
 
 import { aboutService } from "@/modules/about/application/about.service";
 
@@ -9,12 +10,7 @@ const interests = aboutService.getInterests();
 export default function AboutPage() {
   return (
     <div className="p-8 font-mono max-w-6xl mx-auto">
-      {/* Header */}
-      <div className="mb-12 mt-4">
-        <h1 className="text-4xl font-bold text-[#4ec9b0] mb-4">
-          Sobre Mí
-        </h1>
-      </div>
+      <PageTitle title="Sobre Mí" />
 
       {/* Introduction */}
       <section className="mb-16">

@@ -1,3 +1,4 @@
+import { PageTitle } from "@/modules/common/ui/PageTitle";
 import { SkillCard } from "@/modules/skills/ui";
 
 import { skillsService } from "@/modules/skills/application/skills.service";
@@ -8,22 +9,18 @@ const skills = skillsService.getAllSkills();
 export default function SkillsPage() {
   return (
     <div className="p-8 font-mono max-w-6xl mx-auto">
-      {/* Header */}
-      <div className="mb-12">
-        <h1 className="my-4 text-4xl font-bold text-[#4ec9b0]">
-          Habilidades Técnicas
-        </h1>
-
-        <div className="space-y-1 text-[#d4d4d4]">
-          <p>
+      <PageTitle 
+        title="Habilidades Técnicas" 
+        subtitle={
+          <>
             <span className="text-[#569cd6]">const</span>{" "}
             <span className="text-[#9cdcfe]">totalSkills</span>{" "}
             <span className="text-[#d4d4d4]">=</span>{" "}
             <span className="text-[#b5cea8]">{skills.length}</span>
             <span className="text-[#d4d4d4]">;</span>
-          </p>
-        </div>
-      </div>
+          </>
+        }
+      />
 
       {/* Skills by Category */}
       {categories.map((category) => {
