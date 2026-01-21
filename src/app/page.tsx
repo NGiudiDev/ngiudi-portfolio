@@ -17,7 +17,7 @@ export default function Home() {
         </h1>
         
         <p className="text-[#d4d4d4] text-lg">
-          <span className="text-[#6a9955]">&#47;&#47; Desarrollador Full Stack</span>
+          <span className="text-[#6a9955]">&#47;&#47; Desarrollador frontend</span>
         </p>
 
         <div className="mt-8 space-y-2 text-[#d4d4d4]">

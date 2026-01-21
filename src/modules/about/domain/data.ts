@@ -10,7 +10,7 @@ export const experiences: TimelineItemType[] = [
   },
   {
     year: "2021 - 2023",
-    title: "Desarrollador Frontend",
+    title: "Desarrollador frontend",
     company: "Shipnow",
     description: "Implementación de nuevas funcionalidades en las distintas aplicaciones. Trabajo en conjunto con el equipo de UX para consensuar soluciones viables desde el punto de vista técnico y de experiencia de usuario, y posteriormente validar el resultado final.",
     type: "work"

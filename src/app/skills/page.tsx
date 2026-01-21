@@ -54,25 +54,25 @@ export default function SkillsPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-[#252526] border border-[#2d2d2d] rounded-lg p-6">
             <div className="text-[#569cd6] text-sm mb-2">
-              <span className="text-[#6a9955]">&#47;&#47; </span>Años de experiencia
+              Años de experiencia
             </div>
             
-            <div className="text-4xl font-bold text-[#4ec9b0]">5+</div>
+            <div className="text-4xl font-bold text-[#4ec9b0]">4+</div>
           </div>
           
           <div className="bg-[#252526] border border-[#2d2d2d] rounded-lg p-6">
             <div className="text-[#569cd6] text-sm mb-2">
-              <span className="text-[#6a9955]">&#47;&#47; </span>Tecnologías dominadas
+              Tecnologías dominadas
             </div>
 
             <div className="text-4xl font-bold text-[#4ec9b0]">
-              {skills.filter((s) => s.level >= 80).length}
+              {skills.filter((s) => s.level === "avanzado").length}
             </div>
           </div>
           
           <div className="bg-[#252526] border border-[#2d2d2d] rounded-lg p-6">
             <div className="text-[#569cd6] text-sm mb-2">
-              <span className="text-[#6a9955]">&#47;&#47; </span>Aprendizaje continuo
+              Aprendizaje continuo
             </div>
             
             <div className="text-4xl font-bold text-[#4ec9b0]">100%</div>

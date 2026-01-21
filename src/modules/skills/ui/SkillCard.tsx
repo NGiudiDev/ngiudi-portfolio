@@ -18,6 +18,17 @@ export function SkillCard({ skill }: SkillCardProps) {
     return colors[color] || colors.blue;
   };
 
+  const getLevelConfig = (level: Skill["level"]) => {
+    const configs = {
+      principiante: { width: "33%", label: "Principiante", color: "text-[#ce9178]" },
+      intermedio: { width: "66%", label: "Intermedio", color: "text-[#dcdcaa]" },
+      avanzado: { width: "100%", label: "Avanzado", color: "text-[#4ec9b0]" },
+    };
+    return configs[level];
+  };
+
+  const levelConfig = getLevelConfig(skill.level);
+
   return (
     <div className="bg-[#252526] border border-[#2d2d2d] rounded-lg p-5 hover:border-[#007acc] transition-all duration-300 group">
       <div className="flex items-center justify-between mb-3">
@@ -27,8 +38,8 @@ export function SkillCard({ skill }: SkillCardProps) {
             {skill.name}
           </h3>
         </div>
-        <span className="text-[#9cdcfe] text-sm font-mono">
-          {skill.level}%
+        <span className={`text-sm font-mono ${levelConfig.color}`}>
+          {levelConfig.label}
         </span>
       </div>
       
@@ -38,7 +49,7 @@ export function SkillCard({ skill }: SkillCardProps) {
             className={`h-full rounded-full transition-all duration-500 ${getBarColor(
               skill.color
             )}`}
-            style={{ width: `${skill.level}%` }}
+            style={{ width: levelConfig.width }}
           />
         </div>
       </div>

@@ -11,7 +11,7 @@ export interface Project {
 
 export interface Skill {
   name: string;
-  level: number; // 1-100
+  level: "principiante" | "intermedio" | "avanzado";
   category: string;
   icon?: string;
   color: string;
