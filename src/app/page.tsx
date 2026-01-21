@@ -33,8 +33,8 @@ export default function Home() {
           </p>
  
           <p className="pl-4">
-            <span className="text-[#9cdcfe]">pasión</span>: 
-            <span className="text-[#ce9178]"> &quot;Construir experiencias increíbles&quot;</span>,
+            <span className="text-[#9cdcfe]">misión</span>: 
+            <span className="text-[#ce9178]"> &quot;Diseñar y desarrollar aplicaciones eficientes y visualmente atractivas&quot;</span>,
           </p>
 
           <p className="pl-4">

@@ -25,7 +25,7 @@ export default function AboutPage() {
           <div className="pl-4 space-y-3 text-[#d4d4d4]">
             <p>
               <span className="text-[#9cdcfe]">bio:</span>{" "}
-              <span className="text-[#ce9178]">&quot;Soy un desarrollador frontend apasionado por crear soluciones web innovadoras y eficientes. Con más de 4 años de experiencia, me especializo en construir aplicaciones escalables que resuelven problemas reales.&quot;</span>
+              <span className="text-[#ce9178]">&quot;Soy un desarrollador frontend apasionado por crear soluciones web innovadoras y eficientes. Con más de 4 años de experiencia, me especializo en construir aplicaciones escalables que resuelven problemas reales&quot;</span>
               <span className="text-[#d4d4d4]">,</span>
             </p>
             <p>
@@ -40,7 +40,7 @@ export default function AboutPage() {
             </p>
             <p>
               <span className="text-[#9cdcfe]">filosofía:</span>{" "}
-              <span className="text-[#ce9178]">&quot;El código es poesía, y cada línea debe contar una historia.&quot;</span>
+              <span className="text-[#ce9178]">&quot;El código es poesía, y cada línea debe contar una historia&quot;</span>
             </p>
           </div>
           
@@ -95,7 +95,7 @@ export default function AboutPage() {
           <div className="h-0.5 w-20 bg-[#b5cea8]" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {interests.map((interest, index) => (
             <InterestCard key={index} interest={interest} />
           ))}

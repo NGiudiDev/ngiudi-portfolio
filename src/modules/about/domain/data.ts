@@ -12,7 +12,7 @@ export const experiences: TimelineItemType[] = [
     year: "2021 - 2023",
     title: "Desarrollador frontend",
     company: "Shipnow",
-    description: "Implementación de nuevas funcionalidades en las distintas aplicaciones. Trabajo en conjunto con el equipo de UX para consensuar soluciones viables desde el punto de vista técnico y de experiencia de usuario, y posteriormente validar el resultado final.",
+    description: "Implementación de nuevas funcionalidades en distintas aplicaciones, realizando revisiones de código y brindando feedback de mejora al equipo, y trabajando en conjunto con UX para definir soluciones técnicamente viables y alineadas con la experiencia de usuario, validando el resultado final.",
     type: "work"
   },
 ];
@@ -33,40 +33,35 @@ export const education: TimelineItemType[] = [
     type: "education"
   },
   {
-    year: "2019 - 2022",
+    year: "2019 - 2022  (Incompleto)",
     title: "Ingeniería en sistemas",
     company: "Universidad tecnológica nacional",
-    description: "Enfoque en desarrollo de software, algoritmos, estructuras de datos y arquitectura de sistemas.",
+    description: "La carrera de Sistemas en la Universidad Tecnológica Nacional brinda una formación técnica y práctica orientada al desarrollo, implementación y gestión de sistemas informáticos, con fuerte enfoque en resolución de problemas y vínculo con la industria.",
     type: "education"
   },
   {
     year: "2011 - 2015",
     title: "Técnico electrónico",
     company: "Casa salesiana PIO IX",
-    description: "En los últimos 3 años de la carrera fueron realizados proyectos multidisciplinarios en grupo, con el fin de aplicar los conocimientos aprendidos durante la cursada.",
+    description: "La formación brinda sólidos conocimientos en electrónica analógica y digital, electricidad, automatización y mantenimiento, con un enfoque práctico orientado a la resolución de problemas técnicos reales.",
     type: "education"
   }
 ];
 
 export const interests: Interest[] = [
   {
-    icon: "💻",
-    title: "Tecnología",
-    description: "Me apasiona explorar y trabajar con nuevas tecnologías y herramientas de desarrollo."
-  },
-  {
-    icon: "🎓",
-    title: "Aprendizaje Continuo",
-    description: "Siempre explorando nuevas tecnologías y mejores prácticas de desarrollo."
+    icon: "�️",
+    title: "Arquitectura de Software",
+    description: "Me fascina diseñar sistemas escalables y mantener código limpio que sea fácil de entender y mantener."
   },
   {
     icon: "🎨",
-    title: "UI/UX Design",
-    description: "Me apasiona crear experiencias de usuario intuitivas y atractivas."
+    title: "Diseño de Producto",
+    description: "Disfruto el proceso de convertir ideas en productos digitales que resuelvan problemas reales de los usuarios."
   },
   {
     icon: "🚀",
-    title: "Innovación",
-    description: "Busco constantemente formas de mejorar procesos y crear soluciones eficientes."
+    title: "Nuevas Tecnologías",
+    description: "Siempre explorando frameworks modernos, herramientas y tendencias que puedan mejorar el desarrollo."
   }
 ];
