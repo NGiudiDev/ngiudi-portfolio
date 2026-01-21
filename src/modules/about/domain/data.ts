@@ -3,40 +3,47 @@ import { TimelineItemType, Interest } from "@/types";
 export const experiences: TimelineItemType[] = [
   {
     year: "2024 - Presente",
-    title: "Senior Full Stack Developer",
-    company: "Tech Solutions Inc.",
-    description: "Liderando el desarrollo de aplicaciones web escalables utilizando Next.js, React y Node.js. Implementación de arquitecturas serverless y optimización de rendimiento.",
+    title: "Líder técnico de frontend",
+    company: "Shipnow",
+    description: "Lidero un equipo de cuatro desarrolladores frontend dedicado al desarrollo y mantenimiento de aplicaciones web y móviles para el ecosistema logístico. El equipo trabaja en diversas soluciones, las principales aplicaciones es una plataforma para que los vendedores gestionen sus pedidos, una plataforma para que el área de tráfico planifique y administre rutas, y una aplicación móvil que permite a los choferes completar y registrar los envíos.",
     type: "work"
   },
   {
-    year: "2022 - 2024",
-    title: "Full Stack Developer",
-    company: "Digital Agency",
-    description: "Desarrollo de aplicaciones web y móviles para clientes. Trabajo con React, TypeScript, y AWS. Colaboración con equipos multidisciplinarios.",
+    year: "2021 - 2023",
+    title: "Desarrollador Frontend",
+    company: "Shipnow",
+    description: "Implementación de nuevas funcionalidades en las distintas aplicaciones. Trabajo en conjunto con el equipo de UX para consensuar soluciones viables desde el punto de vista técnico y de experiencia de usuario, y posteriormente validar el resultado final.",
     type: "work"
   },
-  {
-    year: "2020 - 2022",
-    title: "Frontend Developer",
-    company: "StartUp XYZ",
-    description: "Construcción de interfaces de usuario modernas y responsivas. Implementación de mejores prácticas de accesibilidad y UX.",
-    type: "work"
-  }
 ];
 
 export const education: TimelineItemType[] = [
   {
-    year: "2019 - 2023",
-    title: "Ingeniería en Sistemas",
-    company: "Universidad Nacional",
+    year: "2022 - 2024",
+    title: "ORT Argentina",
+    company: "Universidad tecnológica nacional",
+    description: "Formación orientada al análisis, diseño y desarrollo de sistemas informáticos, con capacidad para desempeñarse en roles como desarrollo de software, análisis funcional, testing y aseguramiento de calidad, arquitectura de software y liderazgo técnico de proyectos.",
+    type: "education"
+  },
+  {
+    year: "2019 - 2022",
+    title: "Professional Webmaster",
+    company: "Universidad tecnológica nacional",
+    description: "Capacitación integral de Professional Webmaster, una opción que combina las principales tecnologías de diseño y programación de aplicaciones Web. Aborda tanto el diseño y desarrollo, como también la parte de programación dinámica web.",
+    type: "education"
+  },
+  {
+    year: "2019 - 2022",
+    title: "Ingeniería en sistemas",
+    company: "Universidad tecnológica nacional",
     description: "Enfoque en desarrollo de software, algoritmos, estructuras de datos y arquitectura de sistemas.",
     type: "education"
   },
   {
-    year: "2023",
-    title: "AWS Certified Solutions Architect",
-    company: "Amazon Web Services",
-    description: "Certificación en diseño y despliegue de sistemas escalables en AWS.",
+    year: "2011 - 2015",
+    title: "Técnico electrónico",
+    company: "Casa salesiana PIO IX",
+    description: "En los últimos 3 años de la carrera fueron realizados proyectos multidisciplinarios en grupo, con el fin de aplicar los conocimientos aprendidos durante la cursada.",
     type: "education"
   }
 ];
@@ -44,8 +51,8 @@ export const education: TimelineItemType[] = [
 export const interests: Interest[] = [
   {
     icon: "💻",
-    title: "Open Source",
-    description: "Contribuyo a proyectos open source y mantengo mis propias librerías."
+    title: "Tecnología",
+    description: "Me apasiona explorar y trabajar con nuevas tecnologías y herramientas de desarrollo."
   },
   {
     icon: "🎓",

@@ -17,34 +17,30 @@ export default function AboutPage() {
         <div className="bg-[#252526] border border-[#2d2d2d] rounded-lg p-6">
           <div className="mb-4">
             <span className="text-[#569cd6]">const</span>{" "}
-            <span className="text-[#9cdcfe]">aboutMe</span>{" "}
+            <span className="text-[#9cdcfe]">sobre_mi</span>{" "}
             <span className="text-[#d4d4d4]">=</span>{" "}
             <span className="text-[#d4d4d4]">{"{"}</span>
           </div>
           
           <div className="pl-4 space-y-3 text-[#d4d4d4]">
             <p>
-              <span className="text-[#9cdcfe]">bio</span>
-              <span className="text-[#d4d4d4]">:</span>{" "}
-              <span className="text-[#ce9178]">&quot;Soy un desarrollador Full Stack apasionado por crear soluciones web innovadoras y eficientes. Con más de 5 años de experiencia, me especializo en construir aplicaciones escalables que resuelven problemas reales.&quot;</span>
+              <span className="text-[#9cdcfe]">bio:</span>{" "}
+              <span className="text-[#ce9178]">&quot;Soy un desarrollador frontend apasionado por crear soluciones web innovadoras y eficientes. Con más de 4 años de experiencia, me especializo en construir aplicaciones escalables que resuelven problemas reales.&quot;</span>
               <span className="text-[#d4d4d4]">,</span>
             </p>
             <p>
-              <span className="text-[#9cdcfe]">location</span>
-              <span className="text-[#d4d4d4]">:</span>{" "}
+              <span className="text-[#9cdcfe]">ubicación:</span>{" "}
               <span className="text-[#ce9178]">&quot;Buenos Aires, Argentina&quot;</span>
               <span className="text-[#d4d4d4]">,</span>
             </p>
             <p>
-              <span className="text-[#9cdcfe]">yearsOfExperience</span>
-              <span className="text-[#d4d4d4]">:</span>{" "}
-              <span className="text-[#b5cea8]">5</span>
+              <span className="text-[#9cdcfe]">años_de_experiencia:</span>{" "}
+              <span className="text-[#b5cea8]">4</span>
               <span className="text-[#d4d4d4]">,</span>
             </p>
             <p>
-              <span className="text-[#9cdcfe]">philosophy</span>
-              <span className="text-[#d4d4d4]">:</span>{" "}
-              <span className="text-[#ce9178]">&quot;Code is poetry, and every line should tell a story.&quot;</span>
+              <span className="text-[#9cdcfe]">filosofía:</span>{" "}
+              <span className="text-[#ce9178]">&quot;El código es poesía, y cada línea debe contar una historia.&quot;</span>
             </p>
           </div>
           
