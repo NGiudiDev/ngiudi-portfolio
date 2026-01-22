@@ -3,6 +3,13 @@ import { Skill } from "@/types";
 export const skills: Skill[] = [
   // Frontend
   {
+    name: "HTML/CSS",
+    level: "avanzado",
+    category: "Frontend",
+    icon: "🎨",
+    color: "blue",
+  },
+  {
     name: "React",
     level: "avanzado",
     category: "Frontend",
@@ -11,37 +18,9 @@ export const skills: Skill[] = [
   },
   {
     name: "Next.js",
-    level: "avanzado",
+    level: "principiante",
     category: "Frontend",
     icon: "▲",
-    color: "blue",
-  },
-  {
-    name: "TypeScript",
-    level: "avanzado",
-    category: "Frontend",
-    icon: "📘",
-    color: "blue",
-  },
-  {
-    name: "JavaScript",
-    level: "avanzado",
-    category: "Frontend",
-    icon: "📜",
-    color: "yellow",
-  },
-  {
-    name: "HTML/CSS",
-    level: "avanzado",
-    category: "Frontend",
-    icon: "🎨",
-    color: "orange",
-  },
-  {
-    name: "Tailwind CSS",
-    level: "avanzado",
-    category: "Frontend",
-    icon: "💨",
     color: "blue",
   },
   {
@@ -51,7 +30,28 @@ export const skills: Skill[] = [
     icon: "💚",
     color: "green",
   },
-  
+  {
+    name: "JavaScript",
+    level: "avanzado",
+    category: "Frontend",
+    icon: "📜",
+    color: "yellow",
+  },
+  {
+    name: "TypeScript",
+    level: "intermedio",
+    category: "Frontend",
+    icon: "📘",
+    color: "blue",
+  },
+  {
+    name: "SASS",
+    level: "intermedio",
+    category: "Frontend",
+    icon: "💅",
+    color: "pink",
+  },
+    
   // Backend
   {
     name: "Node.js",
@@ -62,123 +62,104 @@ export const skills: Skill[] = [
   },
   {
     name: "Express",
-    level: "avanzado",
+    level: "intermedio",
     category: "Backend",
     icon: "🚂",
-    color: "green",
+    color: "gray",
   },
   {
-    name: "Python",
-    level: "intermedio",
+    name: "REST APIs",
+    level: "avanzado",
     category: "Backend",
-    icon: "🐍",
-    color: "yellow",
+    icon: "🔌",
+    color: "blue",
   },
-  {
-    name: "FastAPI",
-    level: "intermedio",
-    category: "Backend",
-    icon: "⚡",
-    color: "green",
-  },
-  
+
   // Database
   {
-    name: "PostgreSQL",
+    name: "MySQL",
     level: "avanzado",
     category: "Database",
-    icon: "🐘",
+    icon: "🗄️",
     color: "blue",
   },
   {
     name: "MongoDB",
-    level: "avanzado",
+    level: "principiante",
     category: "Database",
     icon: "🍃",
     color: "green",
   },
   {
-    name: "Redis",
-    level: "intermedio",
-    category: "Database",
-    icon: "🔴",
-    color: "red",
-  },
-  {
-    name: "Prisma",
+    name: "Sequelize",
     level: "avanzado",
     category: "Database",
-    icon: "⚪",
+    icon: "⚡",
     color: "blue",
   },
   
-  // DevOps & Tools
+  // Herramientas & Tools
   {
     name: "Git",
     level: "avanzado",
-    category: "DevOps",
+    category: "Herramientas",
     icon: "📦",
     color: "orange",
   },
   {
-    name: "Docker",
-    level: "avanzado",
-    category: "DevOps",
-    icon: "🐳",
-    color: "blue",
-  },
-  {
-    name: "AWS",
+    name: "Jest",
     level: "intermedio",
-    category: "DevOps",
-    icon: "☁️",
-    color: "orange",
-  },
-  {
-    name: "CI/CD",
-    level: "avanzado",
-    category: "DevOps",
-    icon: "🔄",
-    color: "green",
-  },
-  
-  // Other
-  {
-    name: "GraphQL",
-    level: "intermedio",
-    category: "API",
-    icon: "◉",
-    color: "purple",
-  },
-  {
-    name: "REST API",
-    level: "avanzado",
-    category: "API",
-    icon: "🔌",
-    color: "green",
-  },
-  {
-    name: "Jest/Testing",
-    level: "avanzado",
-    category: "Testing",
+    category: "Herramientas",
     icon: "🧪",
     color: "red",
   },
   {
-    name: "UI/UX Design",
+    name: "UI/UX",
     level: "intermedio",
-    category: "Design",
+    category: "Herramientas",
     icon: "🎨",
     color: "purple",
   },
+  {
+    name: "Docker",
+    level: "avanzado",
+    category: "Herramientas",
+    icon: "🐳",
+    color: "blue",
+  },
+  {
+    name: "Cypress",
+    level: "intermedio",
+    category: "Herramientas",
+    icon: "🌲",
+    color: "green",
+  },
+  {
+    name: "Storybook",
+    level: "intermedio",
+    category: "Herramientas",
+    icon: "📚",
+    color: "pink",
+  },
+  {
+    name: "CI/CD",
+    level: "intermedio",
+    category: "Herramientas",
+    icon: "🔄",
+    color: "green",
+  },  
+  {
+    name: "Figma",
+    level: "intermedio",
+    category: "Herramientas",
+    icon: "🎨",
+    color: "purple",
+  }
 ];
 
 export const categories = [
   { name: "Frontend", color: "blue" },
   { name: "Backend", color: "green" },
   { name: "Database", color: "purple" },
-  { name: "DevOps", color: "orange" },
-  { name: "API", color: "yellow" },
-  { name: "Testing", color: "red" },
-  { name: "Design", color: "purple" },
+  { name: "Herramientas", color: "orange" },
 ];

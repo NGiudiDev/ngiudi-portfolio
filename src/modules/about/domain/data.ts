@@ -50,7 +50,7 @@ export const education: TimelineItemType[] = [
 
 export const interests: Interest[] = [
   {
-    icon: "�️",
+    icon: "🏛️",
     title: "Arquitectura de Software",
     description: "Me fascina diseñar sistemas escalables y mantener código limpio que sea fácil de entender y mantener."
   },

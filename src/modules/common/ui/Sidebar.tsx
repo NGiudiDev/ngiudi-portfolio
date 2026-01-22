@@ -9,7 +9,6 @@ import {
   UserIcon, 
   BriefcaseIcon, 
   EnvelopeIcon,
-  DocumentTextIcon,
   CodeBracketIcon
 } from "@heroicons/react/24/outline";
 
@@ -18,7 +17,6 @@ const navigationItems = [
   { href: "/about", icon: UserIcon, name: "Sobre mí" },
   { href: "/projects", icon: BriefcaseIcon, name: "Mis Proyectos" },
   { href: "/skills", icon: CodeBracketIcon, name: "Habilidades" },
-  { href: "/resume", icon: DocumentTextIcon, name: "Currículum Vitae" },
   { href: "/contact", icon: EnvelopeIcon, name: "Contacto" },
 ];
 

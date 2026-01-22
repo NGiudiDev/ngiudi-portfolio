@@ -48,12 +48,6 @@ export interface Education {
   honors?: string;
 }
 
-export interface Certification {
-  year: string;
-  name: string;
-  issuer: string;
-}
-
 export interface ContactInfo {
   icon: React.ComponentType<{ className?: string }>;
   label: string;

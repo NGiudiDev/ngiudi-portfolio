@@ -4,12 +4,11 @@ interface PageTitleProps {
   title: string;
   subtitle?: ReactNode;
   className?: string;
-  action?: ReactNode;
 }
 
-export function PageTitle({ title, subtitle, className = "", action }: PageTitleProps) {
+export function PageTitle({ title, subtitle, className = "" }: PageTitleProps) {
   return (
-    <div className={`mb-12 mt-4 ${action ? 'flex items-start justify-between' : ''} ${className}`}>
+    <div className={`mb-12 mt-4 ${className}`}>
       <div>
         <h1 className="text-4xl font-bold text-[#4ec9b0] mb-2">
           {title}
@@ -21,12 +20,6 @@ export function PageTitle({ title, subtitle, className = "", action }: PageTitle
           </div>
         )}
       </div>
-      
-      {action && (
-        <div>
-          {action}
-        </div>
-      )}
     </div>
   );
 }

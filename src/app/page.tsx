@@ -1,6 +1,15 @@
+"use client";
+
 import Link from "next/link";
 
+import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
+
 export default function Home() {
+  const handleDownload = () => {
+    // Implementar descarga de CV si es necesario
+    console.log('Download CV');
+  };
+
   return (
     <div className="p-8 font-mono max-w-6xl mx-auto">
       <div className="mb-8">
@@ -62,9 +71,13 @@ export default function Home() {
         </div>
 
         <div className="mt-8 flex gap-4">
-          <Link href="/projects" className="px-4 py-2 bg-[#007acc] text-white rounded hover:bg-[#005a9e] transition-colors inline-block text-center">
-            Ver Proyectos
-          </Link>
+          <button
+            className="flex items-center gap-2 px-4 py-2 bg-[#007acc] text-white rounded hover:bg-[#005a9e] transition-colors"
+            onClick={handleDownload}
+          >
+            <ArrowDownTrayIcon className="w-5 h-5" />
+            Descargar PDF
+          </button>
 
           <Link href="/contact" className="px-4 py-2 border border-[#007acc] text-[#007acc] rounded hover:bg-[#007acc] hover:text-white transition-colors inline-block text-center">
             Contactar
