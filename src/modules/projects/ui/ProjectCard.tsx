@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 import { ArrowTopRightOnSquareIcon, CodeBracketIcon } from "@heroicons/react/24/outline";
@@ -16,10 +17,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
       {/* Project Image Placeholder */}
       <div className="h-48 bg-[#1e1e1e] border-b border-[#2d2d2d] flex items-center justify-center relative overflow-hidden">
         {project.image ? (
-          <ing
+          <Image
             alt={project.title}
-            className="w-full h-full object-cover"
-            src={project.image} 
+            className="object-cover"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            src={project.image}
           />
         ) : (
           <CodeBracketIcon className="w-16 h-16 text-[#007acc] opacity-30" />
@@ -32,7 +35,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       <div className="p-5 flex flex-col flex-grow">
         {/* Title & Date */}
         <div className="flex items-start justify-between mb-3">
-          <h3 className="text-xl font-semibold text-[#4ec9b0] group-hover:text-[#6dd4bd] transition-colors">
+          <h3 className="text-lg font-semibold text-[#4ec9b0] group-hover:text-[#6dd4bd] transition-colors">
             {project.title}
           </h3>
 
