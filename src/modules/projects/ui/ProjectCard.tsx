@@ -62,7 +62,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         {/* Links */}
-        <div className="flex gap-3 pt-3 border-t border-[#2d2d2d] mt-auto">
+        <div className="flex gap-3 pt-3 px-3 border-t border-[#2d2d2d] mt-auto">
           {project.github && (
             <Link
               className="flex items-center gap-1 text-sm text-[#858585] hover:text-[#007acc] transition-colors"
@@ -77,7 +77,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
           {project.demo && (
             <Link
-              className="flex items-center gap-1 text-sm text-[#858585] hover:text-[#007acc] transition-colors"
+              className="flex items-center gap-1 pl-2 text-sm text-[#858585] hover:text-[#007acc] transition-colors"
               href={project.demo}
               rel="noopener noreferrer"
               target="_blank"

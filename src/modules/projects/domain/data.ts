@@ -11,6 +11,7 @@ export const projects: Project[] = [
     technologies: ["React", "Storybook", "Styled-Components"],
     date: "2024",
     github: "https://github.com/NGiudiDev/hue-design-system",
+    demo: "https://ngiudidev.github.io/hue-design-system",
     image: hueDesignSystem.src,
   },
   {
