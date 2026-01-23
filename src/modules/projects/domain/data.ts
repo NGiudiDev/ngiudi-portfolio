@@ -1,8 +1,18 @@
 import { Project } from "@/types";
 
 import cryptoPriceNotifier from "../../../images/crypto-price-notifier.png";
+import hueDesignSystem from "../../../images/hue-design-system.png";
 
 export const projects: Project[] = [
+  {
+    id: 2,
+    title: "Hue Design System",
+    description: "Design System desarrollado en React, enfocado en la reutilización de componentes, consistencia visual y buenas prácticas de UI.",
+    technologies: ["React", "Storybook", "Styled-Components"],
+    date: "2024",
+    github: "https://github.com/NGiudiDev/hue-design-system",
+    image: hueDesignSystem.src,
+  },
   {
     id: 1,
     title: "Notificador de Precios de Criptomonedas",
