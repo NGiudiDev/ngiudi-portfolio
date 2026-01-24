@@ -2,8 +2,18 @@ import { Project } from "@/types";
 
 import cryptoPriceNotifier from "../../../images/crypto-price-notifier.png";
 import hueDesignSystem from "../../../images/hue-design-system.png";
+import splitlyApp from "../../../images/splitly-app.png";
 
 export const projects: Project[] = [
+  {
+    id: 3,
+    title: "Splitly",
+    description: "Splitly es una aplicación desarrollada en Flutter que permite dividir gastos de manera simple y visual entre varias personas.",
+    technologies: ["Flutter", "Dart"],
+    date: "2025",
+    github: "https://github.com/NGiudiDev/splitly",
+    image: splitlyApp.src,
+  },
   {
     id: 2,
     title: "Hue Design System",
