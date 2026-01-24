@@ -1,5 +1,6 @@
 import { FormData } from "@/types";
 import { contactInfo, socialLinks } from "../domain/data";
+import { sendContactEmail } from "./actions";
 
 export class ContactService {
   getContactInfo() {
@@ -36,14 +37,8 @@ export class ContactService {
     return errors;
   }
 
-  async submitForm(formData: FormData): Promise<boolean> {
-    // Simular envío del formulario
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        console.log("Formulario enviado:", formData);
-        resolve(true);
-      }, 1500);
-    });
+  async submitForm(formData: FormData): Promise<{ success: boolean; error?: string }> {
+    return await sendContactEmail(formData);
   }
 }
 

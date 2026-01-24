@@ -26,6 +26,7 @@ export default function ContactPage() {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const validateForm = () => {
     const newErrors = contactService.validateForm(formData);
@@ -41,20 +42,23 @@ export default function ContactPage() {
     }
 
     setIsSubmitting(true);
+    setSubmitError(null);
 
     // Usar el servicio para enviar el formulario
-    await contactService.submitForm(formData);
-
-    console.log("Form submitted:", formData);
+    const result = await contactService.submitForm(formData);
 
     setIsSubmitting(false);
-    setIsSubmitted(true);
 
-    // Resetear formulario después de 3 segundos
-    setTimeout(() => {
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setIsSubmitted(false);
-    }, 3000);
+    if (result.success) {
+      setIsSubmitted(true);
+      // Resetear formulario después de 3 segundos
+      setTimeout(() => {
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        setIsSubmitted(false);
+      }, 3000);
+    } else {
+      setSubmitError(result.error || "Error al enviar el mensaje");
+    }
   };
 
   const handleChange = (
@@ -231,6 +235,15 @@ export default function ContactPage() {
                     </p>
                   )}
                 </div>
+
+                {/* Error Message */}
+                {submitError && (
+                  <div className="bg-[#5a1d1d] border border-[#f48771] rounded px-4 py-3">
+                    <p className="text-[#f48771] text-sm">
+                      ⚠️ {submitError}
+                    </p>
+                  </div>
+                )}
 
                 {/* Submit Button */}
                 <div className="flex gap-4">

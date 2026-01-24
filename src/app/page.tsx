@@ -72,9 +72,11 @@ export default function Home() {
 
         <div className="mt-8 flex gap-4">
           <button
-            className="flex items-center gap-2 px-4 py-2 bg-[#007acc] text-white rounded hover:bg-[#005a9e] transition-colors"
+            aria-disabled="true"
+            className="flex items-center gap-2 px-4 py-2 bg-[#007acc] text-white rounded opacity-50 cursor-not-allowed transition-colors"
+            disabled
             onClick={handleDownload}
-          >
+            >
             <ArrowDownTrayIcon className="w-5 h-5" />
             Descargar PDF
           </button>
