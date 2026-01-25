@@ -34,10 +34,12 @@ export function SkillCard({ skill }: SkillCardProps) {
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
           {skill.icon && <span className="text-2xl">{skill.icon}</span>}
-          <h3 className="text-[#d4d4d4] font-semibold group-hover:text-[#4ec9b0] transition-colors">
+        
+          <h3 className="text-[#d4d4d4] font-semibold">
             {skill.name}
           </h3>
         </div>
+
         <span className={`text-sm font-mono ${levelConfig.color}`}>
           {levelConfig.label}
         </span>
@@ -55,7 +57,6 @@ export function SkillCard({ skill }: SkillCardProps) {
       </div>
       
       <div className="text-[#6a9955] text-xs">
-        <span className="text-[#858585]">&#47;&#47; </span>
         {skill.category}
       </div>
     </div>

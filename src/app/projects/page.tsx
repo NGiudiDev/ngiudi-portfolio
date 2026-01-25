@@ -13,7 +13,7 @@ export default function ProjectsPage() {
         subtitle={
           <>
             <span className="text-[#569cd6]">const</span>{" "}
-            <span className="text-[#9cdcfe]">projectCount</span>{" "}
+            <span className="text-[#9cdcfe]">cantidad_de_proyectos</span>{" "}
             <span className="text-[#d4d4d4]">=</span>{" "}
             <span className="text-[#b5cea8]">{projects.length}</span>
             <span className="text-[#d4d4d4]">;</span>

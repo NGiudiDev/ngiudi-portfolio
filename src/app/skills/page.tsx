@@ -14,7 +14,7 @@ export default function SkillsPage() {
         subtitle={
           <>
             <span className="text-[#569cd6]">const</span>{" "}
-            <span className="text-[#9cdcfe]">totalSkills</span>{" "}
+            <span className="text-[#9cdcfe]">cantidad_de_habilidades</span>{" "}
             <span className="text-[#d4d4d4]">=</span>{" "}
             <span className="text-[#b5cea8]">{skills.length}</span>
             <span className="text-[#d4d4d4]">;</span>

@@ -1,14 +1,30 @@
 import { Skill } from "@/types";
 
 export const skills: Skill[] = [
-  // Frontend
+  // Lenguajes de Programación
   {
-    name: "HTML/CSS",
+    name: "JavaScript",
     level: "avanzado",
-    category: "Frontend",
-    icon: "🎨",
+    category: "Lenguajes de Programación",
+    icon: "📜",
+    color: "yellow",
+  },
+  {
+    name: "TypeScript",
+    level: "intermedio",
+    category: "Lenguajes de Programación",
+    icon: "📘",
     color: "blue",
   },
+  {
+    name: "Dart",
+    level: "intermedio",
+    category: "Lenguajes de Programación",
+    icon: "🎯",
+    color: "blue",
+  },
+
+  // Frontend
   {
     name: "React",
     level: "avanzado",
@@ -21,7 +37,7 @@ export const skills: Skill[] = [
     level: "principiante",
     category: "Frontend",
     icon: "▲",
-    color: "blue",
+    color: "yellow",
   },
   {
     name: "Vue.js",
@@ -29,27 +45,6 @@ export const skills: Skill[] = [
     category: "Frontend",
     icon: "💚",
     color: "green",
-  },
-  {
-    name: "JavaScript",
-    level: "avanzado",
-    category: "Frontend",
-    icon: "📜",
-    color: "yellow",
-  },
-  {
-    name: "TypeScript",
-    level: "intermedio",
-    category: "Frontend",
-    icon: "📘",
-    color: "blue",
-  },
-  {
-    name: "SASS",
-    level: "intermedio",
-    category: "Frontend",
-    icon: "💅",
-    color: "pink",
   },
   {
     name: "Flutter",
@@ -72,14 +67,14 @@ export const skills: Skill[] = [
     level: "intermedio",
     category: "Backend",
     icon: "🚂",
-    color: "gray",
+    color: "blue",
   },
   {
     name: "REST APIs",
     level: "avanzado",
     category: "Backend",
     icon: "🔌",
-    color: "blue",
+    color: "yellow",
   },
 
   // Database
@@ -88,14 +83,7 @@ export const skills: Skill[] = [
     level: "avanzado",
     category: "Database",
     icon: "🗄️",
-    color: "blue",
-  },
-  {
-    name: "MongoDB",
-    level: "principiante",
-    category: "Database",
-    icon: "🍃",
-    color: "green",
+    color: "yellow",
   },
   {
     name: "Sequelize",
@@ -105,7 +93,39 @@ export const skills: Skill[] = [
     color: "blue",
   },
   
-  // Herramientas & Tools
+  // Testing
+  {
+    name: "Jest",
+    level: "intermedio",
+    category: "Testing",
+    icon: "🧪",
+    color: "red",
+  },
+  {
+    name: "Cypress",
+    level: "intermedio",
+    category: "Testing",
+    icon: "🌲",
+    color: "green",
+  },
+
+  // Documentación
+  {
+    name: "Storybook",
+    level: "intermedio",
+    category: "Documentación",
+    icon: "📚",
+    color: "pink",
+  },
+  {
+    name: "Figma",
+    level: "intermedio",
+    category: "Documentación",
+    icon: "🎨",
+    color: "purple",
+  },
+
+  // Herramientas
   {
     name: "Git",
     level: "avanzado",
@@ -114,39 +134,11 @@ export const skills: Skill[] = [
     color: "orange",
   },
   {
-    name: "Jest",
-    level: "intermedio",
-    category: "Herramientas",
-    icon: "🧪",
-    color: "red",
-  },
-  {
-    name: "UI/UX",
-    level: "intermedio",
-    category: "Herramientas",
-    icon: "🎨",
-    color: "purple",
-  },
-  {
     name: "Docker",
-    level: "avanzado",
+    level: "intermedio",
     category: "Herramientas",
     icon: "🐳",
     color: "blue",
-  },
-  {
-    name: "Cypress",
-    level: "intermedio",
-    category: "Herramientas",
-    icon: "🌲",
-    color: "green",
-  },
-  {
-    name: "Storybook",
-    level: "intermedio",
-    category: "Herramientas",
-    icon: "📚",
-    color: "pink",
   },
   {
     name: "CI/CD",
@@ -155,18 +147,15 @@ export const skills: Skill[] = [
     icon: "🔄",
     color: "green",
   },  
-  {
-    name: "Figma",
-    level: "intermedio",
-    category: "Herramientas",
-    icon: "🎨",
-    color: "purple",
-  }
+  
 ];
 
 export const categories = [
-  { name: "Frontend", color: "blue" },
-  { name: "Backend", color: "green" },
-  { name: "Database", color: "purple" },
-  { name: "Herramientas", color: "orange" },
+  { name: "Lenguajes de Programación" },
+  { name: "Frontend" },
+  { name: "Testing" },
+  { name: "Backend" },
+  { name: "Database" },
+  { name: "Documentación" },
+  { name: "Herramientas" },
 ];
