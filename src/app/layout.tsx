@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
-import { useGoogleAnalytics } from "@/modules/common/hooks/useGoogleAnalytics";
-
+import { ClientAnalytics } from "@/modules/common/ui/ClientAnalytics";
 import { StatusBar } from "@/modules/common/ui/StatusBar";
 import { Sidebar } from "@/modules/common/ui/Sidebar";
 import { TabBar } from "@/modules/common/ui/TabBar";
@@ -30,11 +29,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useGoogleAnalytics(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || "");
-
   return (
     <html lang="es">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ClientAnalytics measurementId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ""} />
+        
         <div className="flex h-screen overflow-hidden bg-[#1e1e1e]">
           <Sidebar />
           
