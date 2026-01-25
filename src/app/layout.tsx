@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 
-import { Sidebar } from "@/modules/common/ui/Sidebar";
+import { useGoogleAnalytics } from "@/modules/common/hooks/useGoogleAnalytics";
+
 import { StatusBar } from "@/modules/common/ui/StatusBar";
+import { Sidebar } from "@/modules/common/ui/Sidebar";
 import { TabBar } from "@/modules/common/ui/TabBar";
 
 import { Geist, Geist_Mono } from "next/font/google";
@@ -28,23 +30,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  useGoogleAnalytics(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || "");
+
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="es">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <div className="flex h-screen overflow-hidden bg-[#1e1e1e]">
           <Sidebar />
           
           {/* Main Content Area */}
           <div className="flex-1 flex flex-col overflow-hidden">
             <TabBar />
-            
+
             {/* Content */}
             <main className="flex-1 overflow-auto bg-[#1e1e1e] text-[#cccccc]">
               {children}
             </main>
-            
+
             <StatusBar />
           </div>
         </div>
