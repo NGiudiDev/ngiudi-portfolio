@@ -13,10 +13,6 @@ export class AboutService {
   getInterests(): Interest[] {
     return interests;
   }
-
-  getAllTimeline(): TimelineItemType[] {
-    return [...experiences, ...education];
-  }
 }
 
 export const aboutService = new AboutService();

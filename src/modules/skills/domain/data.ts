@@ -51,6 +51,13 @@ export const skills: Skill[] = [
     icon: "💅",
     color: "pink",
   },
+  {
+    name: "Flutter",
+    level: "avanzado",
+    category: "Frontend",
+    icon: "📱",
+    color: "cyan",
+  },
     
   // Backend
   {
