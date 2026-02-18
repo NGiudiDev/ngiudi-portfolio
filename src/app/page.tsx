@@ -5,11 +5,6 @@ import Link from "next/link";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 
 export default function Home() {
-  const handleDownload = () => {
-    // Implementar descarga de CV si es necesario
-    console.log('Download CV');
-  };
-
   return (
     <div className="p-8 font-mono max-w-6xl mx-auto">
       <div className="mb-8">
