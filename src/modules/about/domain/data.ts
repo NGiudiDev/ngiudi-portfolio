@@ -20,13 +20,13 @@ export const experiences: TimelineItemType[] = [
 export const education: TimelineItemType[] = [
   {
     year: "2022 - 2024",
-    title: "ORT Argentina",
-    company: "Universidad tecnológica nacional",
+    title: "Analista en sistemas de información",
+    company: "ORT Argentina",
     description: "Formación orientada al análisis, diseño y desarrollo de sistemas informáticos, con capacidad para desempeñarse en roles como desarrollo de software, análisis funcional, testing y aseguramiento de calidad, arquitectura de software y liderazgo técnico de proyectos.",
     type: "education"
   },
   {
-    year: "2019 - 2022",
+    year: "2019",
     title: "Professional Webmaster",
     company: "Universidad tecnológica nacional",
     description: "Capacitación integral de Professional Webmaster, una opción que combina las principales tecnologías de diseño y programación de aplicaciones Web. Aborda tanto el diseño y desarrollo, como también la parte de programación dinámica web.",
