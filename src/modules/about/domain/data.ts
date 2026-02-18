@@ -33,7 +33,7 @@ export const education: TimelineItemType[] = [
     type: "education"
   },
   {
-    year: "2019 - 2022  (Incompleto)",
+    year: "2019 - 2021  (Incompleto)",
     title: "Ingeniería en sistemas",
     company: "Universidad tecnológica nacional",
     description: "La carrera de Sistemas en la Universidad Tecnológica Nacional brinda una formación técnica y práctica orientada al desarrollo, implementación y gestión de sistemas informáticos, con fuerte enfoque en resolución de problemas y vínculo con la industria.",

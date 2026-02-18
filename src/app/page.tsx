@@ -71,15 +71,14 @@ export default function Home() {
         </div>
 
         <div className="mt-8 flex gap-4">
-          <button
-            aria-disabled="true"
-            className="flex items-center gap-2 px-4 py-2 bg-[#007acc] text-white rounded opacity-50 cursor-not-allowed transition-colors"
-            disabled
-            onClick={handleDownload}
-            >
+          <a
+            className="flex items-center gap-2 px-4 py-2 bg-[#007acc] text-white rounded hover:bg-[#005fa3] transition-colors"
+            download
+            href="/CV%20Nicolás%20Giudice%202026.pdf"
+          >
             <ArrowDownTrayIcon className="w-5 h-5" />
             Descargar PDF
-          </button>
+          </a>
 
           <Link href="/contact" className="px-4 py-2 border border-[#007acc] text-[#007acc] rounded hover:bg-[#007acc] hover:text-white transition-colors inline-block text-center">
             Contactar

@@ -17,8 +17,8 @@ export const contactInfo = [
   {
     icon: PhoneIcon,
     label: "Teléfono",
-    value: "+54 11 6794-6707",
-    href: "tel:+541167946707",
+    value: "+54 9 11 6794-6707",
+    href: "tel:+5491167946707",
     color: "text-[#569cd6]",
   },
   {
