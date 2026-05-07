@@ -1,3 +1,5 @@
+export type Locale = "es" | "pt";
+
 export interface Project {
   id: number;
   title: string;
@@ -50,7 +52,7 @@ export interface Education {
 
 export interface ContactInfo {
   icon: React.ComponentType<{ className?: string }>;
-  label: string;
+  labelKey: string;
   value: string;
   href: string | null;
   color: string;

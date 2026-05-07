@@ -2,9 +2,10 @@ import { Skill } from "@/types";
 
 interface SkillCardProps {
   skill: Skill;
+  levelLabel?: string;
 }
 
-export function SkillCard({ skill }: SkillCardProps) {
+export function SkillCard({ skill, levelLabel }: SkillCardProps) {
   const getBarColor = (color: string) => {
     const colors: { [key: string]: string } = {
       blue: "bg-[#569cd6]",
@@ -20,9 +21,9 @@ export function SkillCard({ skill }: SkillCardProps) {
 
   const getLevelConfig = (level: Skill["level"]) => {
     const configs = {
-      principiante: { width: "33%", label: "Principiante", color: "text-[#ce9178]" },
-      intermedio: { width: "66%", label: "Intermedio", color: "text-[#dcdcaa]" },
-      avanzado: { width: "100%", label: "Avanzado", color: "text-[#4ec9b0]" },
+      principiante: { width: "33%", color: "text-[#ce9178]" },
+      intermedio: { width: "66%", color: "text-[#dcdcaa]" },
+      avanzado: { width: "100%", color: "text-[#4ec9b0]" },
     };
     return configs[level];
   };
@@ -41,7 +42,7 @@ export function SkillCard({ skill }: SkillCardProps) {
         </div>
 
         <span className={`text-sm font-mono ${levelConfig.color}`}>
-          {levelConfig.label}
+          {levelLabel ?? skill.level}
         </span>
       </div>
       

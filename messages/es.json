@@ -1,0 +1,105 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Mis Proyectos",
+    "skills": "Habilidades",
+    "contact": "Contacto",
+    "switchLanguage": "Mudar para Português"
+  },
+  "home": {
+    "greetingVar": "saludo",
+    "greeting": "\"Hola, Mundo!\"",
+    "title": "Bienvenido a mi Portfolio",
+    "developerComment": "// Desarrollador full stack",
+    "developerVar": "desarrollador",
+    "nameField": "nombre",
+    "nameValue": "\"Nicolás Giudice\"",
+    "missionField": "misión",
+    "missionValue": "\"Diseñar y desarrollar aplicaciones eficientes y visualmente atractivas\"",
+    "jobField": "trabajo_actual",
+    "sinceField": "desde",
+    "sinceValue": "\"Agosto 2021\"",
+    "companyField": "empresa",
+    "companyValue": "\"Shipnow\"",
+    "roleField": "puesto",
+    "roleValue": "\"Líder técnico de frontend\"",
+    "downloadPdf": "Descargar PDF",
+    "contactBtn": "Contactar"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "varName": "sobre_mi",
+    "bioKey": "bio",
+    "bioValue": "\"Soy un desarrollador frontend apasionado por crear soluciones web innovadoras y eficientes. Con más de 4 años de experiencia, me especializo en construir aplicaciones escalables que resuelven problemas reales\"",
+    "locationKey": "ubicación",
+    "yearsKey": "años_de_experiencia",
+    "philosophyKey": "filosofía",
+    "philosophyValue": "\"El código es poesía, y cada línea debe contar una historia\"",
+    "experienceTitle": "Experiencia Profesional",
+    "educationTitle": "Educación & Certificaciones",
+    "interestsTitle": "Intereses & Pasiones"
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "countVar": "cantidad_de_proyectos",
+    "moreComingSoon": "// Más proyectos próximamente..."
+  },
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "countVar": "cantidad_de_habilidades",
+    "yearsLabel": "Años de experiencia",
+    "techLabel": "Tecnologías dominadas",
+    "learningLabel": "Aprendizaje continuo",
+    "categories": {
+      "languages": "Lenguajes de Programación",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "testing": "Testing",
+      "database": "Database",
+      "docs": "Documentación",
+      "tools": "Herramientas"
+    },
+    "levels": {
+      "principiante": "Principiante",
+      "intermedio": "Intermedio",
+      "avanzado": "Avanzado"
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "messageVar": "mensaje",
+    "messageValue": "\"¡Hablemos sobre tu próximo proyecto!\"",
+    "formTitle": "Envíame un mensaje",
+    "formComment": "// Completa el formulario y te responderé lo antes posible",
+    "labels": {
+      "email": "Email",
+      "phone": "Teléfono",
+      "location": "Ubicación"
+    },
+    "nameLabel": "nombre",
+    "namePlaceholder": "Tu nombre completo",
+    "emailLabel": "email",
+    "emailPlaceholder": "tu.email@ejemplo.com",
+    "subjectLabel": "asunto",
+    "subjectPlaceholder": "Asunto del mensaje",
+    "messageLabel": "mensaje",
+    "messagePlaceholder": "Escribe tu mensaje aquí...",
+    "submitBtn": "Enviar Mensaje",
+    "submittingBtn": "Enviando...",
+    "clearBtn": "Limpiar",
+    "successTitle": "¡Mensaje enviado!",
+    "successMsg": "Gracias por contactarme. Te responderé pronto.",
+    "contactInfoTitle": "Información de contacto",
+    "socialTitle": "Encuéntrame en:",
+    "errors": {
+      "nameRequired": "El nombre es requerido",
+      "emailRequired": "El email es requerido",
+      "emailInvalid": "El email no es válido",
+      "subjectRequired": "El asunto es requerido",
+      "messageRequired": "El mensaje es requerido",
+      "messageTooShort": "El mensaje debe tener al menos 10 caracteres",
+      "genericError": "Error al enviar el mensaje"
+    }
+  }
+}

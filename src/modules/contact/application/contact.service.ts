@@ -15,23 +15,23 @@ export class ContactService {
     const errors: { [key: string]: string } = {};
 
     if (!formData.name.trim()) {
-      errors.name = "El nombre es requerido";
+      errors.name = "nameRequired";
     }
 
     if (!formData.email.trim()) {
-      errors.email = "El email es requerido";
+      errors.email = "emailRequired";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      errors.email = "El email no es válido";
+      errors.email = "emailInvalid";
     }
 
     if (!formData.subject.trim()) {
-      errors.subject = "El asunto es requerido";
+      errors.subject = "subjectRequired";
     }
 
     if (!formData.message.trim()) {
-      errors.message = "El mensaje es requerido";
+      errors.message = "messageRequired";
     } else if (formData.message.trim().length < 10) {
-      errors.message = "El mensaje debe tener al menos 10 caracteres";
+      errors.message = "messageTooShort";
     }
 
     return errors;

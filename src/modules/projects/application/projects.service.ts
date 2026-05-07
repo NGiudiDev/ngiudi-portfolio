@@ -1,9 +1,9 @@
-import { Project } from "@/types";
-import { projects } from "../domain/data";
+import { Project, Locale } from "@/types";
+import { projectsData } from "../domain/data";
 
 export class ProjectsService {
-  getAllProjects(): Project[] {
-    return projects;
+  getAllProjects(locale: Locale = "es"): Project[] {
+    return projectsData[locale];
   }
 }
 

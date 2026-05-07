@@ -1,17 +1,17 @@
-import { TimelineItemType, Interest } from "@/types";
-import { experiences, education, interests } from "../domain/data";
+import { TimelineItemType, Interest, Locale } from "@/types";
+import { experiencesData, educationData, interestsData } from "../domain/data";
 
 export class AboutService {
-  getExperiences(): TimelineItemType[] {
-    return experiences;
+  getExperiences(locale: Locale = "es"): TimelineItemType[] {
+    return experiencesData[locale];
   }
 
-  getEducation(): TimelineItemType[] {
-    return education;
+  getEducation(locale: Locale = "es"): TimelineItemType[] {
+    return educationData[locale];
   }
 
-  getInterests(): Interest[] {
-    return interests;
+  getInterests(locale: Locale = "es"): Interest[] {
+    return interestsData[locale];
   }
 }
 

@@ -151,11 +151,11 @@ export const skills: Skill[] = [
 ];
 
 export const categories = [
-  { name: "Lenguajes de Programación" },
-  { name: "Frontend" },
-  { name: "Testing" },
-  { name: "Backend" },
-  { name: "Database" },
-  { name: "Documentación" },
-  { name: "Herramientas" },
+  { name: "Lenguajes de Programación", translationKey: "languages" },
+  { name: "Frontend", translationKey: "frontend" },
+  { name: "Testing", translationKey: "testing" },
+  { name: "Backend", translationKey: "backend" },
+  { name: "Database", translationKey: "database" },
+  { name: "Documentación", translationKey: "docs" },
+  { name: "Herramientas", translationKey: "tools" },
 ];

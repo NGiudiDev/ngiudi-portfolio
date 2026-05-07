@@ -1,11 +1,9 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
-
+import { useTranslations } from "next-intl";
 import { PageTitle } from "@/modules/common/ui/PageTitle";
-
 import { contactService } from "@/modules/contact/application/contact.service";
-
 import {
   DocumentTextIcon,
   ChatBubbleLeftRightIcon,
@@ -16,6 +14,8 @@ const contactInfo = contactService.getContactInfo();
 const socialLinks = contactService.getSocialLinks();
 
 export default function ContactPage() {
+  const t = useTranslations("contact");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -29,35 +29,39 @@ export default function ContactPage() {
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   const validateForm = () => {
-    const newErrors = contactService.validateForm(formData);
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    const errorKeys = contactService.validateForm(formData);
+    
+    const translated: { [key: string]: string } = {};
+    
+    Object.entries(errorKeys).forEach(([field, key]) => {
+      translated[field] = t(`errors.${key}` as Parameters<typeof t>[0]);
+    });
+    
+    setErrors(translated);
+    
+    return Object.keys(errorKeys).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
     setIsSubmitting(true);
     setSubmitError(null);
 
-    // Usar el servicio para enviar el formulario
     const result = await contactService.submitForm(formData);
 
     setIsSubmitting(false);
 
     if (result.success) {
       setIsSubmitted(true);
-      // Resetear formulario después de 3 segundos
       setTimeout(() => {
         setFormData({ name: "", email: "", subject: "", message: "" });
         setIsSubmitted(false);
       }, 3000);
     } else {
-      setSubmitError(result.error || "Error al enviar el mensaje");
+      setSubmitError(t("errors.genericError"));
     }
   };
 
@@ -66,8 +70,6 @@ export default function ContactPage() {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    
-    // Limpiar error del campo al escribir
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
@@ -75,16 +77,14 @@ export default function ContactPage() {
 
   return (
     <div className="p-8 font-mono max-w-6xl mx-auto">
-      <PageTitle 
-        title="Contacto" 
+      <PageTitle
+        title={t("title")}
         subtitle={
           <>
             <span className="text-[#569cd6]">const</span>{" "}
-            <span className="text-[#9cdcfe]">mensaje</span>{" "}
+            <span className="text-[#9cdcfe]">{t("messageVar")}</span>{" "}
             <span className="text-[#d4d4d4]">=</span>{" "}
-            <span className="text-[#ce9178]">
-              &quot;¡Hablemos sobre tu próximo proyecto!&quot;
-            </span>
+            <span className="text-[#ce9178]">{t("messageValue")}</span>
             <span className="text-[#d4d4d4]">;</span>
           </>
         }
@@ -97,38 +97,30 @@ export default function ContactPage() {
             <div className="mb-6">
               <h2 className="text-2xl font-semibold text-[#dcdcaa] flex items-center gap-2">
                 <ChatBubbleLeftRightIcon className="w-6 h-6" />
-                Envíame un mensaje
+                {t("formTitle")}
               </h2>
-              
               <p className="text-[#858585] text-sm mt-2">
-                &#47;&#47; Completa el formulario y te responderé lo antes posible
+                &#47;&#47; {t("formComment").replace("// ", "")}
               </p>
             </div>
 
             {isSubmitted ? (
               <div className="py-12 text-center">
                 <CheckCircleIcon className="w-16 h-16 text-[#4ec9b0] mx-auto mb-4" />
-                
                 <h3 className="text-2xl font-semibold text-[#4ec9b0] mb-2">
-                  ¡Mensaje enviado!
+                  {t("successTitle")}
                 </h3>
-                
-                <p className="text-[#d4d4d4]">
-                  Gracias por contactarme. Te responderé pronto.
-                </p>
+                <p className="text-[#d4d4d4]">{t("successMsg")}</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name */}
                 <div>
-                  <label
-                    className="block text-[#9cdcfe] text-sm mb-2"
-                    htmlFor="name"
-                  >
-                    <span className="text-[#569cd6]">const</span> nombre{" "}
+                  <label className="block text-[#9cdcfe] text-sm mb-2" htmlFor="name">
+                    <span className="text-[#569cd6]">const</span>{" "}
+                    {t("nameLabel")}{" "}
                     <span className="text-[#d4d4d4]">=</span>
                   </label>
-                  
                   <input
                     className={`w-full bg-[#1e1e1e] border ${
                       errors.name ? "border-[#f48771]" : "border-[#3c3c3c]"
@@ -136,28 +128,22 @@ export default function ContactPage() {
                     id="name"
                     name="name"
                     onChange={handleChange}
-                    placeholder="Tu nombre completo"
+                    placeholder={t("namePlaceholder")}
                     type="text"
                     value={formData.name}
                   />
-                  
                   {errors.name && (
-                    <p className="text-[#f48771] text-xs mt-1">
-                      {errors.name}
-                    </p>
+                    <p className="text-[#f48771] text-xs mt-1">{errors.name}</p>
                   )}
                 </div>
 
                 {/* Email */}
                 <div>
-                  <label
-                    className="block text-[#9cdcfe] text-sm mb-2"
-                    htmlFor="email"
-                  >
-                    <span className="text-[#569cd6]">const</span> email{" "}
+                  <label className="block text-[#9cdcfe] text-sm mb-2" htmlFor="email">
+                    <span className="text-[#569cd6]">const</span>
+                      {" "}{t("emailLabel")}{" "}
                     <span className="text-[#d4d4d4]">=</span>
                   </label>
-
                   <input
                     className={`w-full bg-[#1e1e1e] border ${
                       errors.email ? "border-[#f48771]" : "border-[#3c3c3c]"
@@ -165,28 +151,22 @@ export default function ContactPage() {
                     id="email"
                     name="email"
                     onChange={handleChange}
-                    placeholder="tu.email@ejemplo.com"
+                    placeholder={t("emailPlaceholder")}
                     type="email"
                     value={formData.email}
                   />
-
                   {errors.email && (
-                    <p className="text-[#f48771] text-xs mt-1">
-                      {errors.email}
-                    </p>
+                    <p className="text-[#f48771] text-xs mt-1">{errors.email}</p>
                   )}
                 </div>
 
                 {/* Subject */}
                 <div>
-                  <label
-                    className="block text-[#9cdcfe] text-sm mb-2"
-                    htmlFor="subject"
-                  >
-                    <span className="text-[#569cd6]">const</span> asunto{" "}
+                  <label className="block text-[#9cdcfe] text-sm mb-2" htmlFor="subject">
+                    <span className="text-[#569cd6]">const</span>
+                      {" "}{t("subjectLabel")}{" "}
                     <span className="text-[#d4d4d4]">=</span>
                   </label>
-
                   <input
                     className={`w-full bg-[#1e1e1e] border ${
                       errors.subject ? "border-[#f48771]" : "border-[#3c3c3c]"
@@ -194,29 +174,22 @@ export default function ContactPage() {
                     id="subject"
                     name="subject"
                     onChange={handleChange}
-                    placeholder="Asunto del mensaje"
+                    placeholder={t("subjectPlaceholder")}
                     type="text"
                     value={formData.subject}
-                    
                   />
-
                   {errors.subject && (
-                    <p className="text-[#f48771] text-xs mt-1">
-                      {errors.subject}
-                    </p>
+                    <p className="text-[#f48771] text-xs mt-1">{errors.subject}</p>
                   )}
                 </div>
 
                 {/* Message */}
                 <div>
-                  <label
-                    className="block text-[#9cdcfe] text-sm mb-2"
-                    htmlFor="message"
-                  >
-                    <span className="text-[#569cd6]">const</span> mensaje{" "}
+                  <label className="block text-[#9cdcfe] text-sm mb-2" htmlFor="message">
+                    <span className="text-[#569cd6]">const</span>
+                      {" "}{t("messageLabel")}{" "}
                     <span className="text-[#d4d4d4]">=</span>
                   </label>
-
                   <textarea
                     className={`w-full bg-[#1e1e1e] border ${
                       errors.message ? "border-[#f48771]" : "border-[#3c3c3c]"
@@ -224,37 +197,29 @@ export default function ContactPage() {
                     id="message"
                     name="message"
                     onChange={handleChange}
-                    placeholder="Escribe tu mensaje aquí..."
+                    placeholder={t("messagePlaceholder")}
                     rows={6}
                     value={formData.message}
                   />
-
                   {errors.message && (
-                    <p className="text-[#f48771] text-xs mt-1">
-                      {errors.message}
-                    </p>
+                    <p className="text-[#f48771] text-xs mt-1">{errors.message}</p>
                   )}
                 </div>
 
-                {/* Error Message */}
                 {submitError && (
                   <div className="bg-[#5a1d1d] border border-[#f48771] rounded px-4 py-3">
-                    <p className="text-[#f48771] text-sm">
-                      ⚠️ {submitError}
-                    </p>
+                    <p className="text-[#f48771] text-sm">⚠️ {submitError}</p>
                   </div>
                 )}
 
-                {/* Submit Button */}
                 <div className="flex gap-4">
                   <button
                     className="flex-1 bg-[#007acc] text-white px-6 py-3 rounded hover:bg-[#005a9e] transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
                     disabled={isSubmitting}
                     type="submit"
                   >
-                    {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
+                    {isSubmitting ? t("submittingBtn") : t("submitBtn")}
                   </button>
-
                   <button
                     className="px-6 py-3 border border-[#007acc] text-[#007acc] rounded hover:bg-[#007acc] hover:text-white transition-colors"
                     onClick={() => {
@@ -263,7 +228,7 @@ export default function ContactPage() {
                     }}
                     type="button"
                   >
-                    Limpiar
+                    {t("clearBtn")}
                   </button>
                 </div>
               </form>
@@ -273,26 +238,21 @@ export default function ContactPage() {
 
         {/* Contact Information Sidebar */}
         <div className="space-y-6">
-          {/* Contact Methods */}
           <div className="bg-[#252526] border border-[#2d2d2d] rounded-lg p-6">
             <h3 className="text-lg font-semibold text-[#dcdcaa] mb-4 flex items-center gap-2">
               <DocumentTextIcon className="w-5 h-5" />
-              Información de contacto
+              {t("contactInfoTitle")}
             </h3>
-
             <div className="space-y-4">
               {contactInfo.map((info, index) => {
                 const Icon = info.icon;
-                
                 return (
                   <div key={index} className="flex items-start gap-3">
                     <Icon className={`w-5 h-5 mt-0.5 ${info.color}`} />
-
                     <div>
                       <p className="text-[#858585] text-xs uppercase tracking-wider">
-                        {info.label}
+                        {t(`labels.${info.labelKey}` as Parameters<typeof t>[0])}
                       </p>
-
                       {info.href ? (
                         <a
                           href={info.href}
@@ -310,12 +270,10 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Social Links */}
           <div className="bg-[#252526] border border-[#2d2d2d] rounded-lg p-6">
             <h3 className="text-lg font-semibold text-[#dcdcaa] mb-4">
-              Encuéntrame en:
+              {t("socialTitle")}
             </h3>
-
             <div className="space-y-3">
               {socialLinks.map((social, index) => (
                 <a
@@ -326,12 +284,10 @@ export default function ContactPage() {
                   target="_blank"
                 >
                   <span className="text-2xl">{social.icon}</span>
-
                   <div>
                     <p className="text-[#d4d4d4] font-semibold group-hover:text-[#4ec9b0] transition-colors">
                       {social.name}
                     </p>
-
                     <p className="text-[#858585] text-xs">{social.username}</p>
                   </div>
                 </a>
