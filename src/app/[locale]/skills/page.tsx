@@ -1,9 +1,42 @@
-﻿import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { PageTitle } from "@/modules/common/ui/PageTitle";
 import { SkillCard } from "@/modules/skills/ui";
 import { skillsService } from "@/modules/skills/application/skills.service";
 
-export default async function SkillsPage() {
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+
+  const titles: Record<string, string> = {
+    es: "Habilidades Técnicas",
+    pt: "Habilidades Técnicas",
+  };
+  const descriptions: Record<string, string> = {
+    es: "Habilidades técnicas de Nicolás Giudice — React, TypeScript, Next.js, Node.js, AWS y más. Más de 4 años de experiencia en desarrollo web.",
+    pt: "Habilidades técnicas de Nicolás Giudice — React, TypeScript, Next.js, Node.js, AWS e mais. Mais de 4 anos de experiência em desenvolvimento web.",
+  };
+
+  return {
+    title: titles[locale] ?? titles.es,
+    description: descriptions[locale] ?? descriptions.es,
+    alternates: {
+      canonical: "https://ngiudidev.com/skills",
+      languages: {
+        es: "https://ngiudidev.com/skills",
+        pt: "https://ngiudidev.com/pt/skills",
+      },
+    },
+  };
+}
+
+export default async function SkillsPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = await getTranslations("skills");
 
   const categories = skillsService.getCategories();

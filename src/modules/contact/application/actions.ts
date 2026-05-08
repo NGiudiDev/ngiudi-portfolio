@@ -3,9 +3,8 @@
 import { Resend } from "resend";
 import { FormData } from "@/types";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function sendContactEmail(formData: FormData) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     // Validar que todos los campos estén presentes
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {

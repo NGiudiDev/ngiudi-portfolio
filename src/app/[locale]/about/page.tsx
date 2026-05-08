@@ -1,16 +1,49 @@
-﻿import { getTranslations, getLocale } from "next-intl/server";
+import type { Metadata } from "next";
+import { setRequestLocale, getTranslations, getLocale } from "next-intl/server";
 import { TimelineItem, InterestCard } from "@/modules/about/ui";
 import { PageTitle } from "@/modules/common/ui/PageTitle";
 import { aboutService } from "@/modules/about/application/about.service";
 import { Locale } from "@/types";
 
-export default async function AboutPage() {
-  const locale = (await getLocale()) as Locale;
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+
+  const titles: Record<string, string> = {
+    es: "Sobre Mí",
+    pt: "Sobre Mim",
+  };
+  const descriptions: Record<string, string> = {
+    es: "Conoce a Nicolás Giudice — desarrollador Full Stack con más de 4 años de experiencia en React, TypeScript y Node.js. Buenos Aires, Argentina.",
+    pt: "Conheça Nicolás Giudice — desenvolvedor Full Stack com mais de 4 anos de experiência em React, TypeScript e Node.js. Buenos Aires, Argentina.",
+  };
+
+  return {
+    title: titles[locale] ?? titles.es,
+    description: descriptions[locale] ?? descriptions.es,
+    alternates: {
+      canonical: "https://ngiudidev.com/about",
+      languages: {
+        es: "https://ngiudidev.com/about",
+        pt: "https://ngiudidev.com/pt/about",
+      },
+    },
+  };
+}
+
+export default async function AboutPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const resolvedLocale = (await getLocale()) as Locale;
   const t = await getTranslations("about");
 
-  const experiences = aboutService.getExperiences(locale);
-  const education = aboutService.getEducation(locale);
-  const interests = aboutService.getInterests(locale);
+  const experiences = aboutService.getExperiences(resolvedLocale);
+  const education = aboutService.getEducation(resolvedLocale);
+  const interests = aboutService.getInterests(resolvedLocale);
 
   return (
     <div className="p-8 font-mono max-w-6xl mx-auto">

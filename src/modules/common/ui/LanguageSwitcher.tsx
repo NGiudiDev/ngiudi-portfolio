@@ -2,19 +2,19 @@
 
 import { useTransition } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "@/i18n/navigation";
 
 export function LanguageSwitcher() {
   const locale = useLocale();
   const t = useTranslations("navigation");
   const router = useRouter();
+  const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
 
   const handleToggle = () => {
     const nextLocale = locale === "es" ? "pt" : "es";
-    document.cookie = `NEXT_LOCALE=${nextLocale};path=/;max-age=31536000;SameSite=Lax`;
     startTransition(() => {
-      router.refresh();
+      router.replace(pathname, { locale: nextLocale });
     });
   };
 

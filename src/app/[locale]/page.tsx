@@ -1,8 +1,41 @@
-﻿import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 
-export default async function HomePage() {
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+
+  const titles: Record<string, string> = {
+    es: "Nicolás Giudice | Frontend Tech Lead & Full Stack Developer",
+    pt: "Nicolás Giudice | Frontend Tech Lead & Desenvolvedor Full Stack",
+  };
+  const descriptions: Record<string, string> = {
+    es: "Bienvenido a mi portfolio — Líder técnico Frontend en Shipnow, con más de 4 años desarrollando aplicaciones web escalables. Buenos Aires, Argentina.",
+    pt: "Bem-vindo ao meu portfólio — Líder técnico Frontend na Shipnow, com mais de 4 anos desenvolvendo aplicações web escaláveis. Buenos Aires, Argentina.",
+  };
+
+  return {
+    title: titles[locale] ?? titles.es,
+    description: descriptions[locale] ?? descriptions.es,
+    alternates: {
+      canonical: "https://ngiudidev.com",
+      languages: {
+        es: "https://ngiudidev.com",
+        pt: "https://ngiudidev.com/pt",
+      },
+    },
+  };
+}
+
+export default async function HomePage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = await getTranslations("home");
 
   return (
