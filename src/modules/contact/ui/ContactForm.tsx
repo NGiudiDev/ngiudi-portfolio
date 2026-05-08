@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { contactService } from "@/modules/contact/application/contact.service";
 import {
@@ -22,6 +22,13 @@ export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const resetTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (resetTimeoutRef.current) clearTimeout(resetTimeoutRef.current);
+    };
+  }, []);
 
   const validateForm = () => {
     const errorKeys = contactService.validateForm(formData);
@@ -51,7 +58,7 @@ export function ContactForm() {
 
     if (result.success) {
       setIsSubmitted(true);
-      setTimeout(() => {
+      resetTimeoutRef.current = setTimeout(() => {
         setFormData({ name: "", email: "", subject: "", message: "" });
         setIsSubmitted(false);
       }, 3000);

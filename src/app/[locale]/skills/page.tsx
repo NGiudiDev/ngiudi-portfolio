@@ -79,6 +79,7 @@ export default async function SkillsPage({ params }: Props) {
                   key={skill.name}
                   skill={skill}
                   levelLabel={t(`levels.${skill.level}` as Parameters<typeof t>[0])}
+                  categoryLabel={t(`categories.${category.translationKey}` as Parameters<typeof t>[0])}
                 />
               ))}
             </div>

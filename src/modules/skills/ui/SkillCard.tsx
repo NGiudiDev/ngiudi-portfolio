@@ -3,9 +3,10 @@ import { Skill } from "@/types";
 interface SkillCardProps {
   skill: Skill;
   levelLabel?: string;
+  categoryLabel?: string;
 }
 
-export function SkillCard({ skill, levelLabel }: SkillCardProps) {
+export function SkillCard({ skill, levelLabel, categoryLabel }: SkillCardProps) {
   const getBarColor = (color: string) => {
     const colors: { [key: string]: string } = {
       blue: "bg-[#569cd6]",
@@ -14,6 +15,8 @@ export function SkillCard({ skill, levelLabel }: SkillCardProps) {
       orange: "bg-[#ce9178]",
       purple: "bg-[#c586c0]",
       red: "bg-[#f48771]",
+      cyan: "bg-[#4fc1ff]",
+      pink: "bg-[#f92aad]",
     };
 
     return colors[color] || colors.blue;
@@ -58,7 +61,7 @@ export function SkillCard({ skill, levelLabel }: SkillCardProps) {
       </div>
       
       <div className="text-[#6a9955] text-xs">
-        {skill.category}
+        {categoryLabel ?? skill.category}
       </div>
     </div>
   );

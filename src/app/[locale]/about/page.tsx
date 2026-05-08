@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { setRequestLocale, getTranslations, getLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { TimelineItem, InterestCard } from "@/modules/about/ui";
 import { PageTitle } from "@/modules/common/ui/PageTitle";
 import { aboutService } from "@/modules/about/application/about.service";
@@ -38,7 +38,7 @@ export default async function AboutPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const resolvedLocale = (await getLocale()) as Locale;
+  const resolvedLocale = locale as Locale;
   const t = await getTranslations("about");
 
   const experiences = aboutService.getExperiences(resolvedLocale);

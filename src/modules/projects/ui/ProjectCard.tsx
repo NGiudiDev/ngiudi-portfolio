@@ -50,10 +50,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
         {/* Technologies */}
         <div className="mb-4">
           <div className="flex flex-wrap gap-2">
-            {project.technologies.map((tech, index) => (
+            {project.technologies.map((tech) => (
               <span
                 className="px-2 py-1 text-xs bg-[#1e1e1e] text-[#9cdcfe] border border-[#2d2d2d] rounded"
-                key={index}
+                key={tech}
               >
                 {tech}
               </span>

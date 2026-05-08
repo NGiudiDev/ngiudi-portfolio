@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { setRequestLocale, getTranslations, getLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { PageTitle } from "@/modules/common/ui/PageTitle";
 import { ProjectCard } from "@/modules/projects/ui";
 import { projectsService } from "@/modules/projects/application/projects.service";
@@ -39,7 +39,7 @@ export default async function ProjectsPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const resolvedLocale = (await getLocale()) as Locale;
+  const resolvedLocale = locale as Locale;
   const t = await getTranslations("projects");
 
   const projects = projectsService.getAllProjects(resolvedLocale);

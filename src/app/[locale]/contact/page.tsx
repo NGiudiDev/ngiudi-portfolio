@@ -74,10 +74,10 @@ export default async function ContactPage({ params }: Props) {
               {t("contactInfoTitle")}
             </h2>
             <div className="space-y-4">
-              {contactInfo.map((info, index) => {
+              {contactInfo.map((info) => {
                 const Icon = info.icon;
                 return (
-                  <div key={index} className="flex items-start gap-3">
+                  <div key={info.labelKey} className="flex items-start gap-3">
                     <Icon className={`w-5 h-5 mt-0.5 ${info.color}`} />
                     <div>
                       <p className="text-[#858585] text-xs uppercase tracking-wider">
@@ -105,11 +105,11 @@ export default async function ContactPage({ params }: Props) {
               {t("socialTitle")}
             </h2>
             <div className="space-y-3">
-              {socialLinks.map((social, index) => (
+              {socialLinks.map((social) => (
                 <a
                   className="flex items-center gap-3 p-3 bg-[#1e1e1e] rounded hover:bg-[#2d2d2d] transition-all group"
                   href={social.url}
-                  key={index}
+                  key={social.name}
                   rel="noopener noreferrer"
                   target="_blank"
                 >
