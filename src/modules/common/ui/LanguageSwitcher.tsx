@@ -1,36 +1,70 @@
 "use client";
 
-import { useTransition } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTransition, useState, useRef, useEffect } from "react";
+import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
+
+const LOCALES = [
+  { code: "es", label: "Español" },
+  { code: "pt", label: "Português" },
+  { code: "en", label: "English" },
+] as const;
 
 export function LanguageSwitcher() {
   const locale = useLocale();
-  const t = useTranslations("navigation");
   const router = useRouter();
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
-  const handleToggle = () => {
-    const nextLocale = locale === "es" ? "pt" : "es";
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleSelect = (code: string) => {
+    setOpen(false);
     startTransition(() => {
-      router.replace(pathname, { locale: nextLocale });
+      router.replace(pathname, { locale: code });
     });
   };
 
   return (
-    <button
-      className="p-2 text-[#858585] hover:text-white transition-colors relative group disabled:opacity-50"
-      disabled={isPending}
-      onClick={handleToggle}
-      title={t("switchLanguage")}
-    >
-      <span className="text-xs font-mono font-bold">{locale.toUpperCase()}</span>
+    <div className="relative" ref={ref}>
+      <button
+        className="px-2 pb-5 text-[#858585] hover:text-white transition-colors disabled:opacity-50"
+        disabled={isPending}
+        onClick={() => setOpen((prev) => !prev)}
+        title="Language"
+      >
+        <span className="text-xs font-mono font-bold">{locale.toUpperCase()}</span>
+      </button>
 
-      {/* Tooltip */}
-      <div className="absolute left-12 top-1/2 -translate-y-1/2 bg-[#2d2d2d] text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
-        {t("switchLanguage")}
-      </div>
-    </button>
+      {open && (
+        <div className="absolute left-12 bottom-5 bg-[#2d2d2d] border border-[#3e3e3e] rounded shadow-lg z-50 overflow-hidden">
+          {LOCALES.map(({ code, label }) => (
+            <button
+              key={code}
+              disabled={isPending}
+              onClick={() => handleSelect(code)}
+              className={`flex items-center gap-2 w-full px-3 py-1.5 text-xs text-left transition-colors whitespace-nowrap ${
+                locale === code
+                  ? "text-white bg-[#094771]"
+                  : "text-[#cccccc] hover:bg-[#3e3e3e]"
+              }`}
+            >
+              <span className="font-mono font-bold w-6">{code.toUpperCase()}</span>
+              <span>{label}</span>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }

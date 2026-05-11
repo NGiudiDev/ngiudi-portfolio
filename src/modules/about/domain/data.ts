@@ -1,6 +1,24 @@
 import { TimelineItemType, Interest, Locale } from "@/types";
 
 export const experiencesData: Record<Locale, TimelineItemType[]> = {
+  en: [
+    {
+      year: "2024 - Present",
+      title: "Frontend Tech Lead",
+      company: "Shipnow",
+      description:
+        "I lead a team of four frontend developers dedicated to the development and maintenance of web and mobile applications for the logistics ecosystem. The team works on various solutions; the main ones are a platform for sellers to manage their orders, a platform for the traffic area to plan and manage routes, and a mobile application that allows drivers to complete and record deliveries.",
+      type: "work",
+    },
+    {
+      year: "2021 - 2023",
+      title: "Frontend Developer",
+      company: "Shipnow",
+      description:
+        "Implementation of new features across different applications, conducting code reviews and providing improvement feedback to the team, and working together with UX to define technically viable solutions aligned with the user experience, validating the final result.",
+      type: "work",
+    },
+  ],
   es: [
     {
       year: "2024 - Presente",
@@ -40,6 +58,40 @@ export const experiencesData: Record<Locale, TimelineItemType[]> = {
 };
 
 export const educationData: Record<Locale, TimelineItemType[]> = {
+  en: [
+    {
+      year: "2022 - 2024",
+      title: "Information Systems Analyst",
+      company: "ORT Argentina",
+      description:
+        "Training focused on the analysis, design and development of computer systems, with the ability to work in roles such as software development, functional analysis, testing and quality assurance, software architecture and technical project leadership.",
+      type: "education",
+    },
+    {
+      year: "2019",
+      title: "Professional Webmaster",
+      company: "Universidad Tecnológica Nacional",
+      description:
+        "Comprehensive Professional Webmaster training, combining the main web design and programming technologies. It covers both design and development, as well as dynamic web programming.",
+      type: "education",
+    },
+    {
+      year: "2019 - 2021  (Incomplete)",
+      title: "Systems Engineering",
+      company: "Universidad Tecnológica Nacional",
+      description:
+        "The Systems program at Universidad Tecnológica Nacional provides technical and practical training focused on the development, implementation and management of computer systems, with a strong emphasis on problem solving and industry connection.",
+      type: "education",
+    },
+    {
+      year: "2011 - 2015",
+      title: "Electronics Technician",
+      company: "Casa Salesiana PIO IX",
+      description:
+        "The program provides solid knowledge in analog and digital electronics, electricity, automation and maintenance, with a practical approach oriented toward solving real technical problems.",
+      type: "education",
+    },
+  ],
   es: [
     {
       year: "2022 - 2024",
@@ -111,6 +163,26 @@ export const educationData: Record<Locale, TimelineItemType[]> = {
 };
 
 export const interestsData: Record<Locale, Interest[]> = {
+  en: [
+    {
+      icon: "🏛️",
+      title: "Software Architecture",
+      description:
+        "I'm fascinated by designing scalable systems and maintaining clean code that is easy to understand and maintain.",
+    },
+    {
+      icon: "🎨",
+      title: "Product Design",
+      description:
+        "I enjoy the process of turning ideas into digital products that solve real user problems.",
+    },
+    {
+      icon: "🚀",
+      title: "New Technologies",
+      description:
+        "Always exploring modern frameworks, tools and trends that can improve development.",
+    },
+  ],
   es: [
     {
       icon: "🏛️",

@@ -13,11 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
+    en: "My Projects",
     es: "Mis Proyectos",
     pt: "Meus Projetos",
   };
 
   const descriptions: Record<string, string> = {
+    en: "Nicolás Giudice's Projects — web applications built with React, Next.js, TypeScript, and more. Portfolio of real-world work.",
     es: "Proyectos de Nicolás Giudice — aplicaciones web desarrolladas con React, Next.js, TypeScript y más. Portfolio de trabajos reales.",
     pt: "Projetos de Nicolás Giudice — aplicações web desenvolvidas com React, Next.js, TypeScript e mais. Portfólio de trabalhos reais.",
   };
@@ -28,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: "https://ngiudidev.com/projects",
       languages: {
+        en: "https://ngiudidev.com/en/projects",
         es: "https://ngiudidev.com/projects",
         pt: "https://ngiudidev.com/pt/projects",
       },

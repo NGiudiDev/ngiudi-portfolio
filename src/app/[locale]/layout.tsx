@@ -53,6 +53,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://ngiudidev.com",
     languages: {
+      en: "https://ngiudidev.com/en",
       es: "https://ngiudidev.com",
       pt: "https://ngiudidev.com/pt",
     },

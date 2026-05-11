@@ -5,6 +5,39 @@ import hueDesignSystem from "../../../images/hue-design-system.png";
 import splitlyApp from "../../../images/splitly-app.png";
 
 export const projectsData: Record<Locale, Project[]> = {
+  en: [
+    {
+      id: 3,
+      title: "Splitly",
+      description:
+        "Splitly is an application developed in Flutter that allows splitting expenses in a simple and visual way among multiple people.",
+      technologies: ["Flutter", "Dart"],
+      date: "2025",
+      github: "https://github.com/NGiudiDev/splitly",
+      image: splitlyApp.src,
+    },
+    {
+      id: 2,
+      title: "Hue Design System",
+      description:
+        "Design System developed in React, focused on component reuse, visual consistency and UI best practices.",
+      technologies: ["React", "Storybook", "Styled-Components"],
+      date: "2024",
+      github: "https://github.com/NGiudiDev/hue-design-system",
+      demo: "https://ngiudidev.github.io/hue-design-system",
+      image: hueDesignSystem.src,
+    },
+    {
+      id: 1,
+      title: "Crypto Price Notifier",
+      description:
+        "Cryptocurrency price notifier that fetches the current value of Bitcoin, Ethereum and Solana in US dollars using the CryptoCompare API. It sends automatic notifications to the operating system and logs all events to a file.",
+      technologies: ["Node.js"],
+      date: "2025",
+      github: "https://github.com/NGiudiDev/crypto-price-notifier",
+      image: cryptoPriceNotifier.src,
+    },
+  ],
   es: [
     {
       id: 3,

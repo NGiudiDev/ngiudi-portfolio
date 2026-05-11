@@ -4,8 +4,7 @@
     "about": "Sobre mí",
     "projects": "Mis Proyectos",
     "skills": "Habilidades",
-    "contact": "Contacto",
-    "switchLanguage": "Mudar para Português"
+    "contact": "Contacto"
   },
   "home": {
     "greetingVar": "saludo",

@@ -11,10 +11,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
-    es: "Nicolás Giudice | Frontend Tech Lead & Full Stack Developer",
-    pt: "Nicolás Giudice | Frontend Tech Lead & Desenvolvedor Full Stack",
+    en: "Nicolás Giudice | Frontend Tech Lead & Full Stack Developer",
+    es: "Nicolás Giudice | Líder Técnico Frontend & Desarrollador Full Stack",
+    pt: "Nicolás Giudice | Líder Técnico Frontend & Desenvolvedor Full Stack",
   };
+
   const descriptions: Record<string, string> = {
+    en: "Welcome to my portfolio — Frontend Tech Lead at Shipnow, with over 4 years of experience developing scalable web applications. Buenos Aires, Argentina.",
     es: "Bienvenido a mi portfolio — Líder técnico Frontend en Shipnow, con más de 4 años desarrollando aplicaciones web escalables. Buenos Aires, Argentina.",
     pt: "Bem-vindo ao meu portfólio — Líder técnico Frontend na Shipnow, com mais de 4 anos desenvolvendo aplicações web escaláveis. Buenos Aires, Argentina.",
   };
@@ -25,6 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: "https://ngiudidev.com",
       languages: {
+        en: "https://ngiudidev.com/en",
         es: "https://ngiudidev.com",
         pt: "https://ngiudidev.com/pt",
       },
@@ -59,7 +63,9 @@ export default async function HomePage({ params }: Props) {
           <p>
             <span className="text-[#c586c0]">export</span>{" "}
             <span className="text-[#569cd6]">const</span>{" "}
-            <span className="text-[#4ec9b0]">{t("developerVar")}</span> = &#123;
+            <span className="text-[#4ec9b0]">{t("developerVar")}</span>{" "}
+            <span className="text-[#d4d4d4]">=</span>{" "}
+            <span className="text-[#d4d4d4]">&#123;</span>
           </p>
 
           <p className="pl-4">

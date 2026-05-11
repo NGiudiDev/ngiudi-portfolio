@@ -1,0 +1,104 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About Me",
+    "projects": "My Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "home": {
+    "greetingVar": "greeting",
+    "greeting": "\"Hello, World!\"",
+    "title": "Welcome to my Portfolio",
+    "developerComment": "// Full stack developer",
+    "developerVar": "developer",
+    "nameField": "name",
+    "nameValue": "\"Nicolás Giudice\"",
+    "missionField": "mission",
+    "missionValue": "\"Design and develop efficient and visually appealing applications\"",
+    "jobField": "current_job",
+    "sinceField": "since",
+    "sinceValue": "\"August 2021\"",
+    "companyField": "company",
+    "companyValue": "\"Shipnow\"",
+    "roleField": "role",
+    "roleValue": "\"Frontend Tech Lead\"",
+    "downloadPdf": "Download PDF",
+    "contactBtn": "Contact"
+  },
+  "about": {
+    "title": "About Me",
+    "varName": "about_me",
+    "bioKey": "bio",
+    "bioValue": "\"I am a frontend developer passionate about creating innovative and efficient web solutions. With over 4 years of experience, I specialize in building scalable applications that solve real-world problems\"",
+    "locationKey": "location",
+    "yearsKey": "years_of_experience",
+    "philosophyKey": "philosophy",
+    "philosophyValue": "\"Code is poetry, and every line should tell a story\"",
+    "experienceTitle": "Professional Experience",
+    "educationTitle": "Education & Certifications",
+    "interestsTitle": "Interests & Passions"
+  },
+  "projects": {
+    "title": "My Projects",
+    "countVar": "project_count",
+    "moreComingSoon": "// More projects coming soon..."
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "countVar": "skill_count",
+    "yearsLabel": "Years of experience",
+    "techLabel": "Mastered technologies",
+    "learningLabel": "Continuous learning",
+    "categories": {
+      "languages": "Programming Languages",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "testing": "Testing",
+      "database": "Database",
+      "docs": "Documentation",
+      "tools": "Tools"
+    },
+    "levels": {
+      "principiante": "Beginner",
+      "intermedio": "Intermediate",
+      "avanzado": "Advanced"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "messageVar": "message",
+    "messageValue": "\"Let's talk about your next project!\"",
+    "formTitle": "Send me a message",
+    "formComment": "// Fill out the form and I'll get back to you as soon as possible",
+    "labels": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    },
+    "nameLabel": "name",
+    "namePlaceholder": "Your full name",
+    "emailLabel": "email",
+    "emailPlaceholder": "your.email@example.com",
+    "subjectLabel": "subject",
+    "subjectPlaceholder": "Message subject",
+    "messageLabel": "message",
+    "messagePlaceholder": "Write your message here...",
+    "submitBtn": "Send Message",
+    "submittingBtn": "Sending...",
+    "clearBtn": "Clear",
+    "successTitle": "Message sent!",
+    "successMsg": "Thank you for reaching out. I'll reply soon.",
+    "contactInfoTitle": "Contact information",
+    "socialTitle": "Find me on:",
+    "errors": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Email is not valid",
+      "subjectRequired": "Subject is required",
+      "messageRequired": "Message is required",
+      "messageTooShort": "Message must be at least 10 characters",
+      "genericError": "Error sending the message"
+    }
+  }
+}

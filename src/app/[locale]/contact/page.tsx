@@ -15,10 +15,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
+    en: "Contact",
     es: "Contacto",
     pt: "Contato",
   };
+
   const descriptions: Record<string, string> = {
+    en: "Get in touch with Nicolás Giudice — Frontend Tech Lead available for freelance projects and job opportunities. Buenos Aires, Argentina.",
     es: "Contacta a Nicolás Giudice — Frontend Tech Lead disponible para proyectos freelance y oportunidades laborales. Buenos Aires, Argentina.",
     pt: "Entre em contato com Nicolás Giudice — Frontend Tech Lead disponível para projetos freelance e oportunidades de trabalho. Buenos Aires, Argentina.",
   };
@@ -29,6 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: "https://ngiudidev.com/contact",
       languages: {
+        en: "https://ngiudidev.com/en/contact",
         es: "https://ngiudidev.com/contact",
         pt: "https://ngiudidev.com/pt/contact",
       },

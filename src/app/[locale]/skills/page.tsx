@@ -12,10 +12,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
+    en: "Technical Skills",
     es: "Habilidades Técnicas",
     pt: "Habilidades Técnicas",
   };
+
   const descriptions: Record<string, string> = {
+    en: "Technical skills of Nicolás Giudice — React, TypeScript, Next.js, Node.js, AWS, and more. Over 4 years of experience in web development.",
     es: "Habilidades técnicas de Nicolás Giudice — React, TypeScript, Next.js, Node.js, AWS y más. Más de 4 años de experiencia en desarrollo web.",
     pt: "Habilidades técnicas de Nicolás Giudice — React, TypeScript, Next.js, Node.js, AWS e mais. Mais de 4 anos de experiência em desenvolvimento web.",
   };
@@ -26,6 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: "https://ngiudidev.com/skills",
       languages: {
+        en: "https://ngiudidev.com/en/skills",
         es: "https://ngiudidev.com/skills",
         pt: "https://ngiudidev.com/pt/skills",
       },

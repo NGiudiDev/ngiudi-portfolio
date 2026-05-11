@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: page.priority,
       alternates: {
         languages: {
+          en: `${BASE_URL}/en${page.path}`,
           es: `${BASE_URL}${page.path}`,
           pt: `${BASE_URL}/pt${page.path}`,
         },
@@ -36,6 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: page.priority,
       alternates: {
         languages: {
+          en: `${BASE_URL}/en${page.path}`,
           es: `${BASE_URL}${page.path}`,
           pt: `${BASE_URL}/pt${page.path}`,
         },

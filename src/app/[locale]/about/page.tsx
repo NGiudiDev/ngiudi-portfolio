@@ -13,10 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const titles: Record<string, string> = {
+    en: "About Me",
     es: "Sobre Mí",
     pt: "Sobre Mim",
   };
+
   const descriptions: Record<string, string> = {
+    en: "Meet Nicolás Giudice — Full Stack developer with over 4 years of experience in React, TypeScript, and Node.js. Buenos Aires, Argentina.",
     es: "Conoce a Nicolás Giudice — desarrollador Full Stack con más de 4 años de experiencia en React, TypeScript y Node.js. Buenos Aires, Argentina.",
     pt: "Conheça Nicolás Giudice — desenvolvedor Full Stack com mais de 4 anos de experiência em React, TypeScript e Node.js. Buenos Aires, Argentina.",
   };
@@ -27,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: "https://ngiudidev.com/about",
       languages: {
+        en: "https://ngiudidev.com/en/about",
         es: "https://ngiudidev.com/about",
         pt: "https://ngiudidev.com/pt/about",
       },

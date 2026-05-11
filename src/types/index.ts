@@ -1,4 +1,4 @@
-export type Locale = "es" | "pt";
+export type Locale = "es" | "pt" | "en";
 
 export interface Project {
   id: number;
