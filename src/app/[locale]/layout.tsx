@@ -121,6 +121,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ClientAnalytics
             measurementId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ""}
+            logRocketAppId={process.env.NEXT_PUBLIC_LOGROCKET_APP_ID || ""}
           />
 
           <div className="flex h-screen overflow-hidden bg-[#1e1e1e]">
