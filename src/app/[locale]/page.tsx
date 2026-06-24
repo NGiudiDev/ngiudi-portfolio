@@ -36,6 +36,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+const cvByLocale: Record<string, string> = {
+  es: "/CV%20Nicol%C3%A1s%20Giudice%202026%20-%20Espa%C3%B1ol.pdf",
+  en: "/CV%20Nicol%C3%A1s%20Giudice%202026%20-%20Ingl%C3%A9s.pdf",
+  pt: "/CV%20Nicol%C3%A1s%20Giudice%202026%20-%20Portugu%C3%A9s.pdf",
+};
+
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
@@ -106,7 +112,7 @@ export default async function HomePage({ params }: Props) {
           <a
             className="flex items-center gap-2 px-4 py-2 bg-[#007acc] text-white rounded hover:bg-[#005fa3] transition-colors"
             download
-            href="/CV%20Nicolás%20Giudice%202026.pdf"
+            href={cvByLocale[locale] ?? cvByLocale.es}
           >
             <ArrowDownTrayIcon className="w-5 h-5" />
             {t("downloadPdf")}
