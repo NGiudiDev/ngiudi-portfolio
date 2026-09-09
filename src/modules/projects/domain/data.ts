@@ -1,11 +1,23 @@
 import { Project, Locale } from "@/types";
 
 import cryptoPriceNotifier from "../../../images/crypto-price-notifier.png";
+import gitlabMrBoard from "../../../images/gitlab-mr-board.png";
 import hueDesignSystem from "../../../images/hue-design-system.png";
 import splitlyApp from "../../../images/splitly-app.png";
 
 export const projectsData: Record<Locale, Project[]> = {
   en: [
+    {
+      id: 4,
+      title: "GitLab MR Board",
+      description:
+        "Full-stack web board that brings together open Merge Requests from multiple GitLab projects and organizes them by mergeability status. It centralizes approvals, discussions, pipelines, conflicts and assignees with multi-user authentication and encrypted credentials.",
+      technologies: ["React", "Express", "PostgreSQL", "GitLab API"],
+      date: "2026",
+      github: "https://github.com/NGiudiDev/gitlab-mr-board",
+      demo: "https://gitlab-mr-board-alpha.vercel.app/",
+      image: gitlabMrBoard.src,
+    },
     {
       id: 3,
       title: "Splitly",
@@ -40,6 +52,17 @@ export const projectsData: Record<Locale, Project[]> = {
   ],
   es: [
     {
+      id: 4,
+      title: "GitLab MR Board",
+      description:
+        "Tablero web full stack que reúne los Merge Requests abiertos de múltiples proyectos de GitLab y los organiza según su estado de mergeabilidad. Centraliza aprobaciones, discusiones, pipelines, conflictos y responsables con autenticación multiusuario y credenciales cifradas.",
+      technologies: ["React", "Express", "PostgreSQL", "GitLab API"],
+      date: "2026",
+      github: "https://github.com/NGiudiDev/gitlab-mr-board",
+      demo: "https://gitlab-mr-board-alpha.vercel.app/",
+      image: gitlabMrBoard.src,
+    },
+    {
       id: 3,
       title: "Splitly",
       description:
@@ -72,6 +95,17 @@ export const projectsData: Record<Locale, Project[]> = {
     },
   ],
   pt: [
+    {
+      id: 4,
+      title: "GitLab MR Board",
+      description:
+        "Quadro web full stack que reúne os Merge Requests abertos de vários projetos do GitLab e os organiza por estado de mergeabilidade. Centraliza aprovações, discussões, pipelines, conflitos e responsáveis com autenticação multiusuário e credenciais criptografadas.",
+      technologies: ["React", "Express", "PostgreSQL", "GitLab API"],
+      date: "2026",
+      github: "https://github.com/NGiudiDev/gitlab-mr-board",
+      demo: "https://gitlab-mr-board-alpha.vercel.app/",
+      image: gitlabMrBoard.src,
+    },
     {
       id: 3,
       title: "Splitly",
