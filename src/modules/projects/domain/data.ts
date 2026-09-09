@@ -15,7 +15,7 @@ export const projectsData: Record<Locale, Project[]> = {
       technologies: ["React", "Express", "PostgreSQL", "GitLab API"],
       date: "2026",
       github: "https://github.com/NGiudiDev/gitlab-mr-board",
-      demo: "https://gitlab-mr-board-alpha.vercel.app/",
+      demo: "https://gitlab-mr-board.vercel.app/",
       image: gitlabMrBoard.src,
     },
     {
@@ -59,7 +59,7 @@ export const projectsData: Record<Locale, Project[]> = {
       technologies: ["React", "Express", "PostgreSQL", "GitLab API"],
       date: "2026",
       github: "https://github.com/NGiudiDev/gitlab-mr-board",
-      demo: "https://gitlab-mr-board-alpha.vercel.app/",
+      demo: "https://gitlab-mr-board.vercel.app/",
       image: gitlabMrBoard.src,
     },
     {
@@ -103,7 +103,7 @@ export const projectsData: Record<Locale, Project[]> = {
       technologies: ["React", "Express", "PostgreSQL", "GitLab API"],
       date: "2026",
       github: "https://github.com/NGiudiDev/gitlab-mr-board",
-      demo: "https://gitlab-mr-board-alpha.vercel.app/",
+      demo: "https://gitlab-mr-board.vercel.app/",
       image: gitlabMrBoard.src,
     },
     {
