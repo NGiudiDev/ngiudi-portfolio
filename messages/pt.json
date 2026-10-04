@@ -30,7 +30,7 @@
     "title": "Sobre Mim",
     "varName": "sobre_mim",
     "bioKey": "bio",
-    "bioValue": "\"Sou um desenvolvedor frontend apaixonado por criar soluções web inovadoras e eficientes. Com mais de 4 anos de experiência, me especializo em construir aplicações escaláveis que resolvem problemas reais\"",
+    "bioValue": "\"Sou um desenvolvedor frontend apaixonado por criar soluções web inovadoras e eficientes. Com mais de {years} anos de experiência, me especializo em construir aplicações escaláveis que resolvem problemas reais\"",
     "locationKey": "localização",
     "yearsKey": "anos_de_experiência",
     "philosophyKey": "filosofia",

@@ -3,6 +3,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { TimelineItem, InterestCard } from "@/modules/about/ui";
 import { PageTitle } from "@/modules/common/ui/PageTitle";
 import { aboutService } from "@/modules/about/application/about.service";
+import { getYearsOfExperience } from "@/modules/about/domain/experience";
 import { Locale } from "@/types";
 
 type Props = {
@@ -11,6 +12,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const yearsOfExperience = getYearsOfExperience();
 
   const titles: Record<string, string> = {
     en: "About Me",
@@ -19,9 +21,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Meet Nicolás Giudice — Full Stack developer with over 4 years of experience in React, TypeScript, and Node.js. Buenos Aires, Argentina.",
-    es: "Conoce a Nicolás Giudice — desarrollador Full Stack con más de 4 años de experiencia en React, TypeScript y Node.js. Buenos Aires, Argentina.",
-    pt: "Conheça Nicolás Giudice — desenvolvedor Full Stack com mais de 4 anos de experiência em React, TypeScript e Node.js. Buenos Aires, Argentina.",
+    en: `Meet Nicolás Giudice — Full Stack developer with over ${yearsOfExperience} years of experience in React, TypeScript, and Node.js. Buenos Aires, Argentina.`,
+    es: `Conoce a Nicolás Giudice — desarrollador Full Stack con más de ${yearsOfExperience} años de experiencia en React, TypeScript y Node.js. Buenos Aires, Argentina.`,
+    pt: `Conheça Nicolás Giudice — desenvolvedor Full Stack com mais de ${yearsOfExperience} anos de experiência em React, TypeScript e Node.js. Buenos Aires, Argentina.`,
   };
 
   return {
@@ -48,6 +50,7 @@ export default async function AboutPage({ params }: Props) {
   const experiences = aboutService.getExperiences(resolvedLocale);
   const education = aboutService.getEducation(resolvedLocale);
   const interests = aboutService.getInterests(resolvedLocale);
+  const yearsOfExperience = getYearsOfExperience();
 
   return (
     <div className="p-8 font-mono max-w-6xl mx-auto">
@@ -66,7 +69,9 @@ export default async function AboutPage({ params }: Props) {
           <div className="pl-4 space-y-3 text-[#d4d4d4]">
             <p>
               <span className="text-[#9cdcfe]">{t("bioKey")}:</span>{" "}
-              <span className="text-[#ce9178]">{t("bioValue")}</span>
+              <span className="text-[#ce9178]">
+                {t("bioValue", { years: yearsOfExperience })}
+              </span>
               <span className="text-[#d4d4d4]">,</span>
             </p>
             <p>
@@ -76,7 +81,7 @@ export default async function AboutPage({ params }: Props) {
             </p>
             <p>
               <span className="text-[#9cdcfe]">{t("yearsKey")}:</span>{" "}
-              <span className="text-[#b5cea8]">4</span>
+              <span className="text-[#b5cea8]">{yearsOfExperience}</span>
               <span className="text-[#d4d4d4]">,</span>
             </p>
             <p>

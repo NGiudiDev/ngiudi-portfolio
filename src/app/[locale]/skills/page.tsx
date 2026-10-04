@@ -3,6 +3,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { PageTitle } from "@/modules/common/ui/PageTitle";
 import { SkillCard } from "@/modules/skills/ui";
 import { skillsService } from "@/modules/skills/application/skills.service";
+import { getYearsOfExperience } from "@/modules/about/domain/experience";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -10,6 +11,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const yearsOfExperience = getYearsOfExperience();
 
   const titles: Record<string, string> = {
     en: "Technical Skills",
@@ -18,9 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<string, string> = {
-    en: "Technical skills of Nicolás Giudice — React, TypeScript, Next.js, Node.js, AWS, and more. Over 4 years of experience in web development.",
-    es: "Habilidades técnicas de Nicolás Giudice — React, TypeScript, Next.js, Node.js, AWS y más. Más de 4 años de experiencia en desarrollo web.",
-    pt: "Habilidades técnicas de Nicolás Giudice — React, TypeScript, Next.js, Node.js, AWS e mais. Mais de 4 anos de experiência em desenvolvimento web.",
+    en: `Technical skills of Nicolás Giudice — React, TypeScript, Next.js, Node.js, AWS, and more. Over ${yearsOfExperience} years of experience in web development.`,
+    es: `Habilidades técnicas de Nicolás Giudice — React, TypeScript, Next.js, Node.js, AWS y más. Más de ${yearsOfExperience} años de experiencia en desarrollo web.`,
+    pt: `Habilidades técnicas de Nicolás Giudice — React, TypeScript, Next.js, Node.js, AWS e mais. Mais de ${yearsOfExperience} anos de experiência em desenvolvimento web.`,
   };
 
   return {
@@ -45,6 +47,7 @@ export default async function SkillsPage({ params }: Props) {
 
   const categories = skillsService.getCategories();
   const skills = skillsService.getAllSkills();
+  const yearsOfExperience = getYearsOfExperience();
 
   return (
     <div className="p-8 font-mono max-w-6xl mx-auto">
@@ -95,7 +98,9 @@ export default async function SkillsPage({ params }: Props) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-[#252526] border border-[#2d2d2d] rounded-lg p-6">
             <div className="text-[#569cd6] text-sm mb-2">{t("yearsLabel")}</div>
-            <div className="text-4xl font-bold text-[#4ec9b0]">4+</div>
+            <div className="text-4xl font-bold text-[#4ec9b0]">
+              {yearsOfExperience}+
+            </div>
           </div>
 
           <div className="bg-[#252526] border border-[#2d2d2d] rounded-lg p-6">

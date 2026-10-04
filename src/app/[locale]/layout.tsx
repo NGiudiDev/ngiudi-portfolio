@@ -9,6 +9,7 @@ import { ClientAnalytics } from "@/modules/common/ui/ClientAnalytics";
 import { StatusBar } from "@/modules/common/ui/StatusBar";
 import { Sidebar } from "@/modules/common/ui/Sidebar";
 import { TabBar } from "@/modules/common/ui/TabBar";
+import { getYearsOfExperience } from "@/modules/about/domain/experience";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -25,6 +26,8 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+const yearsOfExperience = getYearsOfExperience();
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://ngiudidev.com"),
   title: {
@@ -32,7 +35,7 @@ export const metadata: Metadata = {
     template: "%s | Nicolás Giudice",
   },
   description:
-    "Portfolio de Nicolás Giudice — Líder técnico Frontend y desarrollador Full Stack con más de 4 años de experiencia. Buenos Aires, Argentina.",
+    `Portfolio de Nicolás Giudice — Líder técnico Frontend y desarrollador Full Stack con más de ${yearsOfExperience} años de experiencia. Buenos Aires, Argentina.`,
   authors: [{ name: "Nicolás Giudice", url: "https://ngiudidev.com" }],
   creator: "Nicolás Giudice",
   openGraph: {
@@ -40,7 +43,7 @@ export const metadata: Metadata = {
     siteName: "Nicolás Giudice — Portfolio",
     title: "Nicolás Giudice | Frontend Tech Lead & Full Stack Developer",
     description:
-      "Portfolio de Nicolás Giudice — Líder técnico Frontend y desarrollador Full Stack con más de 4 años de experiencia. Buenos Aires, Argentina.",
+      `Portfolio de Nicolás Giudice — Líder técnico Frontend y desarrollador Full Stack con más de ${yearsOfExperience} años de experiencia. Buenos Aires, Argentina.`,
     locale: "es_AR",
     alternateLocale: "pt_BR",
   },
@@ -48,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nicolás Giudice | Frontend Tech Lead & Full Stack Developer",
     description:
-      "Portfolio de Nicolás Giudice — Líder técnico Frontend y desarrollador Full Stack con más de 4 años de experiencia.",
+      `Portfolio de Nicolás Giudice — Líder técnico Frontend y desarrollador Full Stack con más de ${yearsOfExperience} años de experiencia.`,
   },
   alternates: {
     canonical: "https://ngiudidev.com",

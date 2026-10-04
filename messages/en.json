@@ -30,7 +30,7 @@
     "title": "About Me",
     "varName": "about_me",
     "bioKey": "bio",
-    "bioValue": "\"I am a frontend developer passionate about creating innovative and efficient web solutions. With over 4 years of experience, I specialize in building scalable applications that solve real-world problems\"",
+    "bioValue": "\"I am a frontend developer passionate about creating innovative and efficient web solutions. With over {years} years of experience, I specialize in building scalable applications that solve real-world problems\"",
     "locationKey": "location",
     "yearsKey": "years_of_experience",
     "philosophyKey": "philosophy",
